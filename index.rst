@@ -5,7 +5,7 @@
    :maxdepth: 2
    :caption: Contents:
 
-   drp2dplan
+   PFS-DRP-PRU030002-01_drp2dplan
 
 
 .. Indices and tables
