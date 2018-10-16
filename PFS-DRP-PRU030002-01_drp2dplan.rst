@@ -39,7 +39,17 @@ This is the initial release of the pipeline. Used for SM1 r-channel testing at L
 - Basic functionality
 - Low-level test harness.
 
-2DDRP-5.0 (Apr 2019)
+2DDRP-5.0 (Dec 2018)
+====================
+
+This is an intermediate release for NAOJ to test their software for the HSC collaboration prior to the HSC PDR2 release.
+- Packaged SIM2D
+- Packaged 2D DRP
+- Bug fixes
+- data model for 2D (and 1D) consistent
+- agreed file formats and directory locations (or through DB)
+
+2DDRP-6.0 (Apr 2019)
 ====================
 
 Initial end-to-end demonstration of pipeline. Integration test incorporates the 2D simulator,
@@ -52,7 +62,7 @@ that provides test quartz, arcs and science data.
 - initial flux calibration (TBC)
 - more complete test harness
 
-2DDRP-6.0 (Sep 2019)
+2DDRP-7.0 (Sep 2019)
 ====================
 
 Version for early PSF commissioning. Sky data from LAM used for PSF model color dependence
@@ -61,7 +71,7 @@ Version for early PSF commissioning. Sky data from LAM used for PSF model color 
 - Initial telluric correction
 - Initial sky subtraction (to 2% TBC level)
 
-2DDRP-7.0 (Mar 2020)
+2DDRP-8.0 (Mar 2020)
 ====================
 
 Updated version for commissioning, with improvements based on acquired data during the early commissioning phase.
@@ -71,13 +81,13 @@ Updated version for commissioning, with improvements based on acquired data duri
 - Updated sky subtraction (to 1% TBC error level)
 - Performance (speed) improved 
 
-2DDRP-8.0 (Sep 2020)
+2DDRP-9.0 (Sep 2020)
 ====================
 
 Intermediate release with bug fixes.
 
 
-2DDRP-9.0 (Jan 2021)
+2DDRP-10.0 (Jan 2021)
 ====================
 
 Further improvements, bug fixes
