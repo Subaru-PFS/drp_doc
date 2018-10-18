@@ -38,7 +38,7 @@ For historical reasons, the initial version described in this plan is 4.0 .
 This is the initial release of the pipeline. Used for SM1 r-channel testing at LAM.
 
 - Basic functionality
-- Low-level test harness.
+- Low-level test harness
 
 2DDRP-5.0 (Dec 2018)
 ====================
@@ -66,32 +66,34 @@ that provides test quartz, arcs and science data.
 2DDRP-7.0 (Sep 2019)
 ====================
 
-Version for early PSF commissioning. Sky data from LAM used for PSF model color dependence
+Version for early PSF commissioning. Sky data from LAM used for PSF model color dependence. 'Quick' DRP as well as the 'full' DRP should be available. Quick DRP should function at LAM as well as at the summit, in coordination with the ICS. 
 
 - Initial 2D PSF model with color dependence
 - Initial telluric correction
 - Initial sky subtraction (to 2% TBC level)
+- Quick DRP available 
 
 2DDRP-8.0 (Mar 2020)
 ====================
 
-Updated version for commissioning, with improvements based on acquired data during the early commissioning phase.
+Updated version for commissioning. Raster scan observations will take place at this time to refine the accuracy of fiber positioning. For this, Quick DRP will output numeric data of wavelength-calibrated, non-flux-calibrated one-dimensionalized spectra. with improvements based on acquired data during the early commissioning phase. Updates to the pipeline will be made based on acquired data (bright stars), from SM1 and SM2 modules initially
 
 - Updated 2D PSF model
 - Improved telluric modelling
 - Updated sky subtraction (to 1% TBC error level)
 - Performance (speed) improved 
+- Updated Quick DRP for wavelength-calibrated spectra
 
 2DDRP-9.0 (Sep 2020)
 ====================
 
-Intermediate release with bug fixes.
+Intermediate release with functional updates. Updates to the pipeline will be made based on acquired data (faint as well as bright stars) from SM3, as well as the SM1 and SM2 modules.
 
 
 2DDRP-10.0 (Jan 2021)
 ====================
 
-Further improvements, bug fixes
+Further improvements. Pipeline incorporates acquired data from all 4 SM modules.
 
 - Bug fixes
 - Missing functions
