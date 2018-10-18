@@ -18,7 +18,7 @@ Data flow
 ---------
 
 .. figure:: DRP-flow.png
-  figwidth : 80%
+  :width: 80%
 
 The data flow for 2D DRP processing is depicted in the figure above. Blue boxes indicate main processing units, and white boxes key input data types.
 The instrument and its corresponding simulator are shown in central green boxes. The outputs of the simulator and instrument are in general the same (as expected if the simulator simulates the instrument correctly), with the exception that the instrument will provide bias, darks and flats that can be later used by the simulator.
