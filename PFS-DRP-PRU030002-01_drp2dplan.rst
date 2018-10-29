@@ -56,7 +56,7 @@ This is an intermediate release for NAOJ to test their software for the HSC coll
 Initial end-to-end demonstration of pipeline. Integration test incorporates the 2D simulator,
 that provides test quartz, arcs and science data.
 
-- all 3 arms (R, B and N) processed 
+- all 3 arms (R, B, N and M) processed 
 - 3 arms merged
 - initial flat-fielding in accordance to new framework
 - detector map generated
