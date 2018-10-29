@@ -44,6 +44,7 @@ This is the initial release of the pipeline. Used for SM1 r-channel testing at L
 ====================
 
 This is an intermediate release for NAOJ to test their software for the HSC collaboration prior to the HSC PDR2 release.
+
 - Packaged SIM2D
 - Packaged 2D DRP
 - Bug fixes
