@@ -54,24 +54,25 @@ This is an intermediate release for NAOJ to test their software for the HSC coll
 ====================
 
 Initial end-to-end demonstration of pipeline. Integration test incorporates the 2D simulator,
-that provides test quartz, arcs and science data. 
+that provides test quartz, arcs and science data.
 
-- all 3 arms (R, B and NIR) processed 
+- all 3 arms (R, B and N) processed 
 - 3 arms merged
 - initial flat-fielding in accordance to new framework
 - detector map generated
 - initial flux calibration (TBC)
 - more complete test harness
+- Initial 2D PSF model with color dependence
 - initial Quick DRP available and demonstratable
 
 2DDRP-7.0 (Sep 2019)
 ====================
 
-Version for early PSF commissioning. Sky data from LAM used for PSF model color dependence. 'Quick' DRP as well as the 'full' DRP should be available. Quick DRP should function at LAM as well as at the summit, in coordination with the ICS. 
+Version for early PSF commissioning. Sky data from LAM used for PSF model color dependence. 'Quick' DRP as well as the 'full' DRP should be available. Quick DRP should function at LAM as well as at the summit, in coordination with the ICS. 2D sky subtraction using arcs (TBC). Robust and simple 1D sky subtraction.
 
-- Initial 2D PSF model with color dependence
-- Initial telluric correction
-- Initial sky subtraction (to 2% TBC level)
+- Initial telluric absorption
+- Initial 2D sky subtraction (to 2% TBC level)
+- Initial 1D sky subtraction
 - Quick DRP available 
 
 2DDRP-8.0 (Mar 2020)
@@ -80,8 +81,8 @@ Version for early PSF commissioning. Sky data from LAM used for PSF model color 
 Updated version for commissioning. Raster scan observations will take place at this time to refine the accuracy of fiber positioning. For this, Quick DRP will output numeric data of wavelength-calibrated, non-flux-calibrated one-dimensionalized spectra. with improvements based on acquired data during the early commissioning phase. Updates to the pipeline will be made based on acquired data (bright stars), from SM1 and SM2 modules initially.
 
 - Updated 2D PSF model
-- Improved telluric modelling
-- Updated sky subtraction (to 1% TBC error level)
+- Improved telluric absorption
+- Updated 2D sky subtraction (to 1% TBC error level)
 - Performance (speed) improved 
 - Updated Quick DRP for wavelength-calibrated spectra
 
