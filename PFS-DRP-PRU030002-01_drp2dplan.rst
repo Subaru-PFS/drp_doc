@@ -79,7 +79,7 @@ Version for early PSF commissioning. Sky data from LAM used for PSF model color 
 2DDRP-8.0 (Mar 2020)
 ====================
 
-Updated version for commissioning. Raster scan observations will take place at this time to refine the accuracy of fiber positioning. For this, Quick DRP will output numeric data of wavelength-calibrated, non-flux-calibrated one-dimensionalized spectra. with improvements based on acquired data during the early commissioning phase. Updates to the pipeline will be made based on acquired data (bright stars), from SM1 and SM2 modules initially.
+Updated version for commissioning. Raster scan observations will take place at this time to refine the accuracy of fiber positioning. For this, Quick DRP will output numeric data of wavelength-calibrated, flux-calibrated one-dimensionalized spectra. with improvements based on acquired data during the early commissioning phase. Updates to the pipeline will be made based on acquired data (bright stars), from SM1 and SM2 modules initially.
 
 - Updated 2D PSF model
 - Improved telluric absorption
