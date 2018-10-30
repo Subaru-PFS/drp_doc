@@ -55,7 +55,7 @@ This is an intermediate release for NAOJ to test their software for the HSC coll
 - data model for 2D (and 1D) consistent
 - agreed file formats and directory locations (or through DB)
 
-2DDRP-6.0 (Apr 2019)
+2DDRP-6.0 (Mar 2019)
 ====================
 
 Initial end-to-end demonstration of pipeline. Integration test incorporates the 2D simulator,
