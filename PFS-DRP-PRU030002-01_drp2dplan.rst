@@ -28,7 +28,11 @@ Notes
 -----
 
 * Each 2D-DRP release is named according to an incremental version number of the form ``<major>.<minor>`` . For historical reasons, the initial version described in this plan is 4.0 .
+
+Comments and Open Points
+------------------------
 * Most of work described here will be done by developers at Princeton University. The 1D sky subtraction is expected to be done by NAOJ (Sogo Mineo)
+* Sky subtraction: target metric is mentioned in Tamura et al (2016) as '0.5% of the faint sky continuum between the lines'. This needs to be defined even more precisely so that sky subtraction solution can be developed and tested adequately.
 
 
 
@@ -74,7 +78,7 @@ Version for early PSF commissioning. Sky data from LAM used for PSF model color 
 
 - Initial telluric absorption
 - Initial 2D sky subtraction (to 2% [TBC] of the faint sky continuum between the lines)
-- Initial 1D sky subtraction
+- Initial 1D sky subtraction (to 2% [TBC])
 - Quick DRP available 
 
 2DDRP-8.0 (Mar 2020)
