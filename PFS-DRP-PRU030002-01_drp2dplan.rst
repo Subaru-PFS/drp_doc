@@ -55,7 +55,7 @@ This is an intermediate release for NAOJ to test their software for the HSC coll
 ====================
 
 Initial end-to-end demonstration of pipeline. Integration test incorporates the 2D simulator,
-that provides test quartz, arcs and science data.
+that provides test quartz, arcs and science data. Quick processing of exposures within 15 minutes is required. If this is not possible using the full DRP pipeline, a configuration of that pipeline which makes use of more approximate models (eg a more approximate PSF model) will be introduced to achieve this goal.  
 
 - all 3 arms (R, B, N and M) processed 
 - 3 arms merged
@@ -64,7 +64,7 @@ that provides test quartz, arcs and science data.
 - initial flux calibration (TBC)
 - more complete test harness
 - Initial 2D PSF model with color dependence
-- initial Quick DRP available and demonstratable
+- initial 'Quick' DRP available and demonstratable
 
 2DDRP-7.0 (July 2019)
 ====================
