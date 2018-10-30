@@ -72,7 +72,7 @@ that provides test quartz, arcs and science data.
 Version for early PSF commissioning. Sky data from LAM used for PSF model color dependence. 'Quick' DRP as well as the 'full' DRP should be available. Quick DRP should function at LAM as well as at the summit, in coordination with the ICS. 2D sky subtraction using arcs (TBC). Robust and simple 1D sky subtraction.
 
 - Initial telluric absorption
-- Initial 2D sky subtraction (to 2% TBC level)
+- Initial 2D sky subtraction (to 2% [TBC] of the faint sky continuum between the lines)
 - Initial 1D sky subtraction
 - Quick DRP available 
 
@@ -83,7 +83,7 @@ Updated version for commissioning. Raster scan observations will take place at t
 
 - Updated 2D PSF model
 - Improved telluric absorption
-- Updated 2D sky subtraction (to 1% TBC error level)
+- Updated 2D sky subtraction (to 1% of the faint sky continuum between the lines [TBC])
 - Performance (speed) improved 
 - Updated Quick DRP for wavelength-calibrated spectra
 
@@ -102,7 +102,7 @@ Further improvements. Pipeline incorporates acquired data from all 4 SM modules.
 - Missing functions
 - Refactoring
 - Performance (speed) improvements
-- sky subtraction to 0.5% error level
+- sky subtraction to 0.5% of the faint sky continuum between the lines
 
 
 
