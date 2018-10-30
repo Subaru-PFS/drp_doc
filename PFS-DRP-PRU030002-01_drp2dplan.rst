@@ -59,6 +59,7 @@ that provides test quartz, arcs and science data. Quick processing of exposures 
 
 - all 3 arms (R, B, N and M) processed 
 - 3 arms merged
+- co-adding
 - initial flat-fielding in accordance to new framework
 - detector map generated
 - initial flux calibration (TBC)
