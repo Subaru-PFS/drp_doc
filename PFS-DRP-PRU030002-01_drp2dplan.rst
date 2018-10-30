@@ -27,8 +27,7 @@ The instrument and its corresponding simulator are shown in central green boxes.
 Notes
 -----
 
-* Each 2D-DRP release is named according to an incremental version number of the form ``<major>.<minor>`` . 
-For historical reasons, the initial version described in this plan is 4.0 .
+* Each 2D-DRP release is named according to an incremental version number of the form ``<major>.<minor>`` . For historical reasons, the initial version described in this plan is 4.0 .
 * Most of work described here will be done by developers at Princeton University. The 1D sky subtraction is expected to be done by NAOJ (Sogo Mineo)
 
 
