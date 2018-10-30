@@ -66,7 +66,7 @@ that provides test quartz, arcs and science data.
 - Initial 2D PSF model with color dependence
 - initial Quick DRP available and demonstratable
 
-2DDRP-7.0 (Sep 2019)
+2DDRP-7.0 (July 2019)
 ====================
 
 Version for early PSF commissioning. Sky data from LAM used for PSF model color dependence. 'Quick' DRP as well as the 'full' DRP should be available. Quick DRP should function at LAM as well as at the summit, in coordination with the ICS. 2D sky subtraction using arcs (TBC). Robust and simple 1D sky subtraction.
