@@ -52,6 +52,7 @@ This is an intermediate release for K Yabe for 1D sky subtraction study, survey 
 - Packaged SIM2D (with all outputs defined in data model and generated)
 - Packaged 2D DRP (with all outputs defined in data model and generated)
 - SIM2D/2D DRP output checked against ETC.
+- Example LSF for 1-D sky subtraction analysis
 - Bug fixes
 - agreed file formats and directory locations (or through DB)
 
