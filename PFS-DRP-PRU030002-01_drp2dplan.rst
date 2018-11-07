@@ -55,6 +55,8 @@ This is an intermediate release for K Yabe for 1D sky subtraction study, survey 
 - Example LSF for 1-D sky subtraction analysis
 - Bug fixes
 - agreed file formats and directory locations (or through DB)
+- Design Document (providing key components and a description for each)
+- Initial Software User's Manual (providing installation instructions, command-line usage, output files and formats etc).
 
 2DDRP-6.0 (Mar 2019)
 ====================
@@ -71,6 +73,7 @@ that provides test quartz, arcs and science data. Quick processing of exposures 
 - more complete test harness
 - Initial 2D PSF model with color dependence
 - initial 'Quick' DRP mode available and demonstratable
+- Advanced Software User's Manual
 
 2DDRP-7.0 (July 2019)
 ====================
@@ -85,7 +88,7 @@ Version for early PSF commissioning. Sky data from LAM used for PSF model color 
 2DDRP-8.0 (Mar 2020)
 ====================
 
-Updated version for commissioning. Raster scan observations will take place at this time to refine the accuracy of fiber positioning. For this, Quick DRP will output numeric data of wavelength-calibrated, flux-calibrated one-dimensionalized spectra. with improvements based on acquired data during the early commissioning phase. Updates to the pipeline will be made based on acquired data (particularly dark time), from SM1 and SM2 modules initially.
+Updated version for commissioning. Raster scan observations will take place at this time to refine the accuracy of fiber positioning. For this, Quick DRP will output numeric data of wavelength-calibrated, flux-calibrated one-dimensionalized spectra. with improvements based on acquired data during the early commissioning phase. Updates to the pipeline will be made based on acquired data (particularly 3-4 hours of dark time, ~2 hrs of which are contiguous), from SM1 and SM2 modules initially.
 
 - Updated 2D PSF model
 - Improved telluric absorption
