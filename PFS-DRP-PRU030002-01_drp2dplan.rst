@@ -31,7 +31,7 @@ Notes
 
 Comments and Open Points
 ------------------------
-* Most of work described here will be done by developers at Princeton University. The 1D sky subtraction is expected to be done by NAOJ (Sogo Mineo)
+* Most of work described here will be done by developers at Princeton University. The 1D sky subtraction is expected to be done through two independent methods provided by NAOJ (Sogo Mineo) and IPMU (Naoki Yasuda)
 * Sky subtraction: target metric is mentioned in Tamura et al (2016) as '0.5% of the faint sky continuum between the lines'. This needs to be defined even more precisely so that sky subtraction solution can be developed and tested adequately.
 
 
