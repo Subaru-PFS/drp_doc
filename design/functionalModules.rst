@@ -15,6 +15,51 @@ They may be run independently, or by a master pipeline driver script
 (which could be a ``lsst.ctrl.pool.BatchPoolTask`` or its successor).
 
 
+.. _constructBias:
+
+_constructBias
+^^^^^^^^^^^^^^
+
+``constructBias`` operates on a set of bias exposures of a single spectrograph arm.
+For each input image, we apply the usual instrument signature removal (ISR) steps
+up to and not including bias subtraction.
+Then we average the individual exposures,
+with a mild clipping to reject deviant pixels.
+The final product is the combined master bias.
+
+* Input datasets:
+
+  + ``raw``: exposures to combine.
+
+* Output datasets:
+
+  + ``bias``: master bias; primary product.
+  + ``postISRCCD``: cached ISR-corrected exposures.
+
+
+.. _constructDark:
+
+_constructDark
+^^^^^^^^^^^^^^
+
+``constructDark`` operates on a set of dark exposures of a single spectrograph arm.
+For each input image, we apply the usual instrument signature removal (ISR) steps
+up to and not including dark subtraction,
+and mask cosmic-rays on the basis of their morphology.
+Then we average the individual exposures,
+with clipping to reject deviant pixels.
+The final product is the combined master dark.
+
+* Input datasets:
+
+  + ``raw``: exposures to combine.
+
+* Output datasets:
+
+  + ``dark``: master dark; primary product.
+  + ``postISRCCD``: cached ISR-corrected exposures.
+
+
 .. _constructFiberFlat:
 
 constructFiberFlat
@@ -56,8 +101,8 @@ The final product is the combined master flat.
 
 * Output datasets:
 
-  + ``postISRCCD``: cached ISR-corrected exposures.
   + ``flat``: master flat; primary product.
+  + ``postISRCCD``: cached ISR-corrected exposures.
 
 
 .. _constructFiberTrace:
@@ -108,8 +153,8 @@ The final product is the normalized fiber trace.
 
 * Output datasets:
 
-  + ``postISRCCD``: cached ISR-corrected exposures.
   + ``fiberTrace``: trace of fibers; primary product.
+  + ``postISRCCD``: cached ISR-corrected exposures.
 
 
 .. _constructDetectorMap:
@@ -143,8 +188,8 @@ This updated detectorMap is the final product.
 
 * Output datasets:
 
-  + ``postISRCCD``: cached ISR-corrected exposures.
   + ``detectorMap``: map of fiber positions and wavelengths; primary product.
+  + ``postISRCCD``: cached ISR-corrected exposures.
 
 
 .. _constructPsf:
@@ -171,8 +216,8 @@ The final product is the PSF model parameters.
 
 * Output datasets:
 
-  + ``postISRCCD``: cached ISR-corrected exposures.
   + ``psfParams``: PSF parameters; primary product.
+  + ``postISRCCD``: cached ISR-corrected exposures.
 
 
 .. _reduceExposure:
@@ -204,11 +249,11 @@ Finally, for each arm the spectra are extracted and written as the final product
 
 * Output datasets:
 
+  + ``pfsArm``: sky-subtracted, wavelength-calibrated spectra from arm; primary product.
   + ``postISRCCD``: ISR-corrected exposure.
   + ``psf``: PSF model, from subtractSky2d_.
   + ``sky2d``: 2d sky model, from subtractSky2d_.
   + ``lsf``: line-spread function, from subtractSky2d_.
-  + ``pfsArm``: sky-subtracted, wavelength-calibrated spectra from arm; primary product.
 
 
 .. _mergeArms:
@@ -237,8 +282,8 @@ for the entire field of view.
 
 * Output datasets:
 
-  + ``sky1d``: 1d sky model, from subtractSky1d_.
   + ``pfsMerged``: Merged spectra for all spectrographs+arms; primary product.
+  + ``sky1d``: 1d sky model, from subtractSky1d_.
 
 * Algorithmic details:
 
@@ -296,8 +341,8 @@ The final product is the wavelength-calibrated, flux-calibrated spectra for the 
 
 * Output datasets:
 
-  + ``fluxCal``: flux calibration parameters.
   + ``pfsObject``: flux-calibrated object spectra; primary product.
+  + ``fluxCal``: flux calibration parameters.
 
 * Algorithmic details:
 

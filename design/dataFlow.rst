@@ -13,20 +13,38 @@ Data Repository
 
 The LSST stack includes an I/O abstraction layer known as the "data butler", or just "the butler".
 The butler maps keyword-value pairs into file paths within the "data repository" using pre-defined templates.
+Input data are read from, and output products are written to, a directory within the data repository.
+Within a data repository, outputs are typically written within a "rerun" directory
+specified by a symbolic name (usually with the ``--rerun`` command-line argument).
+This serves to group products from a processing run together.
+
+The butler allows data to be specified using keyword-value pairs
+(usually with the ``--id key1=value1 key2=value2`` command-line argument [#]_,
+which allows for flexibility and avoids the need for the user to keep track of filenames.
+For example,
+a set of bias exposures from a particular date can be specified using the individual visit numbers,
+if known (``--id visit=123..132``),
+or by the type of exposure and the date
+(``--id object=BIAS dateObs=2018-11-05``).
+
+.. [#] On the command-line, values can be specified like
+   ``this^that`` meaning both ``this`` *and* ``that``;
+   ``123..234`` meaning all values from ``123`` to ``234``; and
+   ``123..234:7`` meaning all values from ``123`` to ``234`` counting by ``7``.
+
+
+Ingesting raw data
+^^^^^^^^^^^^^^^^^^
+
 In order to access raw data, it must first be ingested into the data repository.
 The LSST stack provides a script to perform this, which we will use: ``ingestImages.py`` [#]_.
 
-.. [#] As of Novemeber 2018, this script ingests only raw images.
+.. [#] As of November 2018, this script ingests only raw images.
    We will need to modify it to also ingest the ``pfiConfig`` files.
 
 Example usage::
 
-  imagestImages.py /path/to/repo /path/to/raw/data/*.fits
-
-
-Within a data repository, outputs are typically written within a "rerun" directory
-specified by a symbolic name (usually with the ``--rerun`` command-line argument).
-This serves to group products from a processing run together.
+  ingestImages.py /path/to/repo /path/to/raw/data/*.fits
 
 
 Calib Construction
@@ -49,7 +67,8 @@ The LSST stack includes a facility for constructing calibs
 and ingesting them into a calibration repository for later retrieval [#]_.
 We will use the LSST scripts for constructing biases and darks,
 as these are constructed in the same way for spectroscopy as for imaging;
-and we will also use the LSST script for ingesting the calibs into the calibration repository.
+and we will also use the LSST script, ``ingestCalibs.py``,
+for ingesting the calibs into the calibration repository.
 
 .. [#] The current calib system is crude, having grown organically, but it should serve our purposes.
        We expect it will mature over the next few years as the LSST team devotes more attention to it.
@@ -92,7 +111,7 @@ Here is an example::
 
 .. [#] Perhaps even likely.
 
-We now need to map the wavelength solution over the detectors
+We now need to map the wavelength solution over the detectors using arc exposures
 (see :ref:`constructDetectorMap`).
 Similar to the case for the fiber traces,
 this may need to be done independently for each science observation,
