@@ -22,8 +22,6 @@ We need to know the detectorMap before we construct it with ``constructDetectorM
 because it is an input to both ``constructFiberTrace.py`` and ``constructDetectorMap.py``.
 This can be done by using an additional calib product specifically for this purpose
 (we use ``bootstrapDetectorMap`` in ``constructDetectorMap.py``).
-Alternatively, if ``constructFiberTrace.py`` and ``constructDetectorMap.py`` are merged,
-constructing the fiber trace and detectorMap could be done simultaneously.
 
 
 Association of ``DetectorMap`` and ``FiberTrace`` with science exposures

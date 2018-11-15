@@ -24,6 +24,10 @@ The principal capabilities are:
 * Provides the wavelength solution for extracted spectra (``getWavelength``).
 * Can serve as a foundation for identifying fibers on the image (``getXCenter``).
 
+This class will be implemented in the ``drp_stella`` package in C++
+(for maximum performance and so it can be used in other C++ modules)
+and wrapped into python.
+
 
 ``FiberTrace`` and ``FiberTraceSet``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -41,6 +45,10 @@ The principal capabilities of ``FiberTrace`` are:
 * Extract a spectrum from an image (``extractSpectrum``).
 * Construct a model image given a spectrum (``constructImage``).
 
+These classes will be implemented in the ``drp_stella`` package in C++
+(for maximum performance)
+and wrapped into python.
+
 
 ``Spectrum`` and ``SpectrumSet``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -55,6 +63,10 @@ but it could also be used for reference spectra in physical units.
 A ``Spectrum`` is persisted as a ``PfsObject``,
 while a ``SpectrumSet`` is persisted as a ``PfsSpectra``.
 
+These classes will be implemented in the ``drp_stella`` package in C++
+(for maximum performance)
+and wrapped into python.
+
 
 ``LineSpreadFunction``
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -66,6 +78,10 @@ is an important ingredient for interpreting the science spectra produced by the 
 The principal capabilities are:
 
 * Calculate the spectrum of an emission line at a given wavelength.
+
+This class will be implemented in the ``drp_stella`` package in C++
+(for maximum performance)
+and wrapped into python.
 
 
 ``PfsSpectra``
@@ -93,6 +109,13 @@ The principal capabilities are:
   + Sky arrays (``sky``)
   + Covariance arrays (``covar``)
 
+This class will be implemented in the ``datamodel`` package in python
+(for ease of use with no compilation or LSST dependencies required).
+While it carries the same information as the more-capable ``SpectrumSet`` class,
+it nevertheless is distinct, as the latter needs to be implemented in C++ for performance reasons.
+However, it will be used to persist data contained in ``SpectrumSet``,
+and we will provide functions for converting between the two.
+
 
 ``PfsObject``
 ^^^^^^^^^^^^^
@@ -112,6 +135,14 @@ The principal capabilities are:
   + Mask array (``mask``)
   + Sky array (``sky``)
   + Covariance array (``covar``)
+
+
+This class will be implemented in the ``datamodel`` package in python
+(for ease of use with no compilation or LSST dependencies required).
+While it carries the same information as the ``Spectrum`` class,
+it nevertheless is distinct, as the latter needs to be implemented in C++ for performance reasons.
+However, it will be used to persist data contained in ``Spectrum``,
+and we will provide functions for converting between the two.
 
 
 ``PfsConfig``
@@ -135,3 +166,5 @@ The principal capabilities are:
     (e.g., ``SCIENCE``, ``SKY``, ``FLUXCAL``, ``BROKEN``, ``BLOCKED``).
   + Bandpasses and corresponding magnitudes (``dict`` mapping ``str`` to ``float``).
 
+This class will be implemented in the ``datamodel`` package in python
+(for ease of use with no compilation or LSST dependencies required).

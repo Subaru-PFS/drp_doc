@@ -163,7 +163,7 @@ Here is an example command-line::
 
 Next, we merge the arms within each spectrograph,
 so that subsequent operations can be done using all available spectral information for each object.
-This also provides an opportunity to clean up any residuals in the 2D sky subtractions
+This also provides an opportunity to clean up any residuals from the 2D sky subtractions
 by fitting the sky residuals over the fibers
 and subtracting from the extracted spectra.
 The result is a set of spectra covering the entire spectral range, for the entire field-of-view.
