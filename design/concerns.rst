@@ -1,9 +1,10 @@
 .. _concerns:
 
-Concerns
---------
+Concerns and/or Future development directions
+---------------------------------------------
 
-Here we outline some concerns with the design as presented.
+Here we outline some concerns with the design as presented
+that might be remedied in a future version of the pipeline.
 
 ``DetectorMap`` and ``FiberTrace``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -31,14 +32,17 @@ If there is a one-to-one relationship between science exposures and calibration 
 then it may not be convenient to treat
 the detectorMap and fiber trace used for science reductions
 as calibs.
-In that case, the quartz and arc exposures could be inputs to :ref:`reduceExposure`,
+In that case, the quartz and arc exposures could be inputs to :ref:`reduceExposure` [#]_,
 which would first construct the fiber trace and detectorMap
 before operating on the science exposure.
+
 
 .. [#] This might occur if we "replay" the fiber positions used for the science exposures
        at the end of the night in order to take corresponding
        quartz (for the fiber trace) and arcs (for the detectorMap).
 
+.. [#] The appropriate quartz and arc could be identified through
+       having the same ``pfsConfigId`` as the raw exposure.
 
 NIR detectors
 ^^^^^^^^^^^^^

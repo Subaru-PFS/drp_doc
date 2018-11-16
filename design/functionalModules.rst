@@ -81,7 +81,7 @@ and no flux calibration is taking place [#]_.
 For each input image, we apply the usual instrument signature removal (ISR) steps
 up to and not including flat-fielding,
 and mask cosmic-rays on the basis of their morphology.
-Then we combine the individual exposures,
+Then we combine the individual images,
 normalizing the pixels within the row of each fiber by the total flux in that fiber row:
 
 .. math::
@@ -91,7 +91,7 @@ where :math:`F(i, x, y)` is the combined flat-field
 with the flux in fiber :math:`i` as a function of position, :math:`(x, y)`;
 and :math:`f_j(i, x, y)` is the :math:`j`-th input image.
 
-The final product is the combined master flat.
+The final product is the combined master flat image.
 
 * Input datasets:
 
@@ -405,7 +405,7 @@ especially when the lines are bright.
 
 This module operates on all arms of the same kind for the entire instrument
 in a single exposure
-(e.g., all red arms in a single visit).
+(e.g., all red arms in a single exposure).
 This is necessary because we will fit models as a function of wavelength over the entire field of view.
 
 This module requires the following inputs:

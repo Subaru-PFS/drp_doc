@@ -22,8 +22,8 @@ The butler allows data to be specified using keyword-value pairs
 (usually with the ``--id key1=value1 key2=value2`` command-line argument [#]_,
 which allows for flexibility and avoids the need for the user to keep track of filenames.
 For example,
-a set of bias exposures from a particular date can be specified using the individual visit numbers,
-if known (``--id visit=123..132``),
+a set of bias exposures from a particular date can be specified using the individual exposure numbers,
+if known (``--id exp=123..132``),
 or by the type of exposure and the date
 (``--id object=BIAS dateObs=2018-11-05``).
 
@@ -95,10 +95,7 @@ A new script, ``constructFiberFlat.py`` (see :ref:`constructFiberFlat`), will co
 Next, we need to map the precise location and profile of each fiber's trace on the detector
 (see :ref:`constructFiberTrace`).
 It's possible [#]_ that this will have to be done independently for each science observation
-since the location and profile can have subtle changes with changes in the cobra position.
-Currently there is no simple way of associating fiber traces with individual science exposures
-(as opposed to associating a fiber trace with all science exposures in some validity range),
-but it should be simple to modify the LSST calibs system to do this if the need arises.
+since the location and profile can have subtle changes with changes in the cobra position [#]_.
 Furthermore, when the slit is fully populated the fiber profiles will overlap,
 and we will need to use two input exposures:
 one for the odd fibers and one for the even fibers.
@@ -106,10 +103,12 @@ Because the fiber traces are obtained by all fibers observing the same quartz la
 this also provides an opportunity to provide a relative flux calibration across all the fibers.
 Here is an example::
 
-  constructFiberTrace.py /path/to/repo --calib /path/to/calibs --rerun calib/fiberTrace --id visit=123^124 <operational arguments>
+  constructFiberTrace.py /path/to/repo --calib /path/to/calibs --rerun calib/fiberTrace --id exp=123^124 <operational arguments>
   ingestCalibs.py /path/to/repo --calib /path/to/calibs /path/to/repo/rerun/calib/fiberTrace/.../*.fits --validity 1
 
 .. [#] Perhaps even likely.
+
+.. [#] In this case, we can associate a fiber trace with a particular ``pfsCconfigId``.
 
 We now need to map the wavelength solution over the detectors using arc exposures
 (see :ref:`constructDetectorMap`).
@@ -159,17 +158,18 @@ Each will have been wavelength-calibrated (through the detectorMap, and perhaps 
 and a relative (across arms) flux calibration (through the fiber trace).
 Here is an example command-line::
 
-  reduceExposure.py /path/to/repo --calib /path/to/calib --rerun science --id visit=123 arm=r <operational parameters>
+  reduceExposure.py /path/to/repo --calib /path/to/calib --rerun science --id exp=123 arm=r <operational parameters>
 
 Next, we merge the arms within each spectrograph,
 so that subsequent operations can be done using all available spectral information for each object.
+This resamples and combines the spectra of each object from the separate arms.
 This also provides an opportunity to clean up any residuals from the 2D sky subtractions
 by fitting the sky residuals over the fibers
 and subtracting from the extracted spectra.
 The result is a set of spectra covering the entire spectral range, for the entire field-of-view.
 An example command-line is::
 
-  mergeArms.py /path/to/repo --calib /path/to/calib --rerun science --id visit=123 <operational arguments>
+  mergeArms.py /path/to/repo --calib /path/to/calib --rerun science --id exp=123 <operational arguments>
 
 We now turn our attention to flux calibration of the extracted, merged spectra.
 The first thing we need to do for this is
@@ -177,21 +177,22 @@ generate a set of reference spectra for the calibration
 (see :ref:`calculateReferenceFlux`).
 An example command-line is::
 
-  calculateReferenceFlux.py /path/to/repo --calib /path/to/calib --rerun science --id visit=123 <operational arguments>
+  calculateReferenceFlux.py /path/to/repo --calib /path/to/calib --rerun science --id exp=123 <operational arguments>
 
 
 Now we can use the reference spectra to
 measure the flux calibration and apply it to the science targets
 (see :ref:`fluxCalibrate`).
-The result is wavelength-calibrated, flux-calibrated spectra from the visit.
+The result is wavelength-calibrated, flux-calibrated spectra from the exposure.
 An example command-line is::
 
-  fluxCalibrate.py /path/to/repo --calib /path/to/calib --rerun science --id visit=123 <operational arguments>
+  fluxCalibrate.py /path/to/repo --calib /path/to/calib --rerun science --id exp=123 <operational arguments>
 
 
-The final operation in the pipeline is to coadd spectra of the same object from multiple visits
+The final operation in the pipeline is to coadd spectra of the same object from multiple exposures
 (see :ref:`coaddSpectra`).
+This resamples and combines the spectra of each object from the separate arms of separate exposures.
 The result is wavelength-calibrated, flux-calibrated coadded spectra.
 An example command-line is::
 
-  coaddSpectra.py /path/to/repo --calib /path/to/calib --rerun science --id visit=123^234^345 <operational arguments>
+  coaddSpectra.py /path/to/repo --calib /path/to/calib --rerun science --id exp=123^234^345 <operational arguments>

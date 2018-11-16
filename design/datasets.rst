@@ -101,11 +101,11 @@ These are the main science products of the pipeline.
   Since these spectra have not been resampled after extraction,
   this may be useful for identifying cosmic-ray hits masquerading as emission lines in the ``pfsObject`` or ``pfsCoadd``.
 * ``pfsObject`` (``pfs.datamodel.PfsObject``):
-  flux-calibrated, barycentric wavelength-calibrated object spectrum from a single visit,
+  flux-calibrated, barycentric wavelength-calibrated object spectrum from a single exposure,
   from :ref:`fluxCalibrate`.
-  This is useful for investigating variations from visit to visit,
+  This is useful for investigating variations from exposure to exposure,
   or identifying cosmic-ray hits masquerading as emission lines in the ``pfsCoadd``.
 * ``pfsCoadd`` (``pfs.datamodel.PfsObject``):
-  coadded spectrum from multiple visits,
+  coadded spectrum from multiple exposures,
   from :ref:`coaddSpectra`.
   This is the main science product that most science users will want.

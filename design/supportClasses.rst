@@ -163,7 +163,7 @@ The principal capabilities are:
   + Fiber x, y position (``float``)
   + Nominal fiber x, y position (``float``)
   + Flag (``int``) indicating the fiber's use
-    (e.g., ``SCIENCE``, ``SKY``, ``FLUXCAL``, ``BROKEN``, ``BLOCKED``).
+    (e.g., ``SCIENCE``, ``SKY``, ``FLUXSTD``, ``BROKEN``, ``BLOCKED``).
   + Bandpasses and corresponding magnitudes (``dict`` mapping ``str`` to ``float``).
 
 This class will be implemented in the ``datamodel`` package in python
