@@ -62,7 +62,7 @@ This is an intermediate release for K Yabe for 1D sky subtraction study, survey 
 ====================
 
 Initial end-to-end demonstration of pipeline. Integration test incorporates the 2D simulator,
-that provides test quartz, arcs and science data. Quick processing of exposures within 15 minutes is required (J Gunn priv comm 2018). If this is not possible using the full DRP pipeline, a special mode of the pipeline that makes use of more approximate models (eg utilising a more approximate PSF model) will be introduced to achieve this goal.  
+that provides test quartz, arcs and science data. Quick processing of exposures within 15 minutes is required (J Gunn priv comm 2018). If this is not possible using the full DRP pipeline, a special mode of the pipeline that makes use of more approximate models (eg utilising a more approximate PSF model) will be introduced to achieve this goal. 2D Simulator delivered with initial 2D PSF model.  
 
 - all 3 arms (R, B, N) processed (and possibly M) 
 - 3 arms merged
@@ -72,6 +72,7 @@ that provides test quartz, arcs and science data. Quick processing of exposures 
 - initial flux calibration (TBC)
 - more complete test harness
 - Initial 2D PSF model with color dependence
+- 2D Simulator delivery with initial 2D PSF model
 - initial 'Quick' DRP mode available and demonstratable
 - Advanced Software User's Manual
 
