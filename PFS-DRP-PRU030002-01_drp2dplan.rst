@@ -82,7 +82,7 @@ that provides test quartz, arcs and science data. Quick processing of exposures 
 Version for early PSF commissioning. Sky data from LAM used for PSF model color dependence. 'Quick' DRP as well as the 'full' DRP should be available. Quick DRP should function at LAM as well as at the summit, in coordination with the ICS. 2D sky subtraction using arcs (TBC). Robust and simple 1D sky subtraction.
 
 - Initial telluric absorption
-- Initial 2D sky subtraction (to 2% [TBC] of the faint sky continuum between the lines)
+- Initial 2D sky subtraction per arm (to 2% [TBC] of the faint sky continuum between the lines)
 - Initial 1D sky subtraction (to 2% [TBC])
 - Quick DRP available 
 
