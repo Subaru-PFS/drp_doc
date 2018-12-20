@@ -98,7 +98,7 @@ Updated version for commissioning. Raster scan observations will take place at t
 2DDRP-9.0 (Apr 2021)
 ====================
 
-Intermediate release with functional updates. Updates to the pipeline will be made based on acquired data from SM3, as well as the SM1 and SM2 modules. Pipeline incorporates acquired data from all 4 SM modules.
+Intermediate release with functional updates. Pipeline incorporates acquired data from all 4 SM modules.
 
 - Sky subtraction to 0.5% of the faint sky continuum between the lines
 - Performance (speed) improved 
