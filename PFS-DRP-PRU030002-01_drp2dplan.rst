@@ -88,12 +88,11 @@ Version for early PSF commissioning. Data taken following PFI installation will 
 2DDRP-8.0 (Sep 2020)
 ====================
 
-Updated version for commissioning. Raster scan observations will take place at this time to refine the accuracy of fiber positioning. For this, Quick DRP will output numeric data of wavelength-calibrated, flux-calibrated one-dimensionalized spectra. with improvements based on acquired data during the early commissioning phase. Updates to the pipeline will be made based on acquired data (particularly 3-4 hours of dark time, ~2 hrs of which are contiguous), from SM1 and SM2 modules initially.
+Updated version for commissioning. Raster scan observations will take place at this time to refine the accuracy of fiber positioning. For this, quick DRP will output numeric data of wavelength-calibrated, flux-calibrated one-dimensionalized spectra. with improvements based on acquired data during the early commissioning phase. Updates to the pipeline will be made based on acquired data (particularly 3-4 hours of dark time, ~2 hrs of which are contiguous), from SM1 and SM2 modules initially.
 
 - Further improvements to 2D PSF model
 - Improved telluric absorption
 - Updated 2D sky subtraction (to 1% of the faint sky continuum between the lines [TBC])
-- Performance (speed) improved 
 - Updated Quick DRP for wavelength-calibrated spectra
 
 2DDRP-9.0 (Apr 2021)
@@ -101,7 +100,8 @@ Updated version for commissioning. Raster scan observations will take place at t
 
 Intermediate release with functional updates. Updates to the pipeline will be made based on acquired data from SM3, as well as the SM1 and SM2 modules. Pipeline incorporates acquired data from all 4 SM modules.
 
-- sky subtraction to 0.5% of the faint sky continuum between the lines
+- Sky subtraction to 0.5% of the faint sky continuum between the lines
+- Performance (speed) improved 
 
 2DDRP-10.0 (Jan 2021)
 ====================
