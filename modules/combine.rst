@@ -1,0 +1,4 @@
+.. combine:
+
+Spectra Combination
+===================
