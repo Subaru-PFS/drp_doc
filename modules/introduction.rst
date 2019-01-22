@@ -81,6 +81,48 @@ before the proposal is implemented.
 .. |Task| replace:: ``lsst.pipe.base.Task``
 .. _Task: https://github.com/lsst/pipe_base/blob/master/python/lsst/pipe/base/task.py
 
+Several modules are expected to return a "persistable object",
+which means an object of a custom class which can be persisted with the LSST data butler.
+We will use the ``FitsCatalogStorage`` storage type [#]_,
+which requires the following methods::
+
+    class SomePersistable:
+        @classmethod
+        def readFits(cls, filename):
+            """Read from FITS file
+
+            Parameters
+            ----------
+            filename : `str`
+                Filename to read.
+
+            Returns
+            -------
+            self : ``cls``
+                Object read from FITS file.
+            """
+            # Use astropy.io.fits to open and read FITS file, then construct object
+            return cls(stuff)
+
+        def writeFits(self, filename):
+            """Write to FITS file
+
+            Parameters
+            ----------
+            filename : `str`
+                Name of file to which to write.
+            """
+            # Use astropy.io.fits to write FITS file.
+
+
+
+.. [#] There are other storage types that can be used,
+       but ``FitsCatalogStorage`` has a clear API,
+       and FITS allows portability.
+       Despite the name, ``FitsCatalogStorage`` does not mean that a FITS table must be used
+       (an image can be used as the format if desired);
+       instead, it refers to the API used to read and write the file.
+
 
 The following classes are useful building blocks of the algorithmic modules:
 

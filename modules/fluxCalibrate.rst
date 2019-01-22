@@ -1,4 +1,0 @@
-.. fluxCalibrate:
-
-Flux Calibration
-================

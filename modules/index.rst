@@ -16,5 +16,5 @@ PFS 2D Pipeline Modules
    fitFocalPlane
    measurePsf
    fitReference
-   fluxCalibrate
+   measureFluxCalibration
    combine
