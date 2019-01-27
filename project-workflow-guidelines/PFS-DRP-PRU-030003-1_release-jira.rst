@@ -51,10 +51,10 @@ which in turn necessitates a release of the 2D simulator at the same time as a r
 
 The project-level labels described above already allow cross-project queries to be performed (eg 'labels in (2DDRP-V5, SIM2D-V5)'). 
 
-In addition, for simplicity, a cross-project ticket will also be introduced, that includes a link to the release-tickets for the individual projects. 
+For simplicity, a cross-project ticket will also be introduced that includes a link to the release-tickets for the individual projects. 
 This ticket itself needs to be included in a particular project, so presently that ticket will be added to the main project, 
 which will be in general 'PIPE2D' as that is the project for which the main work in this area will be done.
 
-With this approach, a simple query can be performed, or a single issue can be viewed and the issues therein, to identify tasks and progress required for cross-project releases.
+With this approach either a simple query can be performed, or a single issue can be viewed and the linked issues therein, to identify tasks and progress required for cross-project releases.
 
 
