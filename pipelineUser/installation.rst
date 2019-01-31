@@ -10,7 +10,8 @@ There are multiple ways of installing these.
 
 #. `Using Docker`_ : use a pre-built Docker image containing both the LSST stack and the PFS 2D DRP modules.
 #. `Install with a script`_ : use our script to both install the LSST stack and the PFS 2D DRP modules.
-#. `Install manually from GitHub`_ : install the LSST stack and then the PFS 2D DRP modules.
+#. `Install binaries with EUPS`_: install the LSST stack and then the PFS 2D DRP module binaries.
+#. `Install manually from GitHub`_ : install the LSST stack and then build the PFS 2D DRP modules from source.
 
 .. _LSST Data Management stack: https://pipelines.lsst.io
 
@@ -298,6 +299,22 @@ and ``setup pipe_drivers``.
 An example usage, which will install the master branch and tag it as ``current`` is::
 
     foo@bar:~/pfs/pfs_pipe2d/bin $ build_pfs.sh -t current
+
+
+Install binaries with EUPS
+--------------------------
+
+Installing with EUPS is similar to installing using a script;
+it's just that in this case, the script is ``eups distrib install``.
+After having installed the LSST stack
+(perhaps with the ``install_lsst.sh`` script, or `manually`_),
+add our distribution server to your ``EUPS_PKGROOT`` envvar,
+and then use ``eups distrib install``::
+
+    EUPS_PKGROOT="${EUPS_PKGROOT}|http://tigress-web.princeton.edu/~pprice/pfs-drp-2d"
+    eups distrib install pfs_pipe2d 5.0
+
+.. _manually: `Install LSST`_
 
 
 Install manually from GitHub
