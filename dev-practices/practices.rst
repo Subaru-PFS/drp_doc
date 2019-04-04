@@ -39,8 +39,9 @@ The PFS DRP code is built on top of the LSST software stack.
 Versioning and Installation
 ---------------------------
 
-LSST follows a six-monthly release cycle. Thus, version 12 of the LSST stack
-was released in June 2016, version 13 will follow in December 2016, etc.
+LSST follows a six-monthly release cycle. 
+Thus, version 17 was released in early 2019, 
+and version 18 will follow during the summer of 2019, etc.
 
 PFS development will target a recent stable version of the LSST
 stack. It should *not* be necessary to install an unstable snapshot of the
@@ -89,7 +90,7 @@ policy: their use is specifically permitted.
 Development Workflow
 ====================
 
-Our development workflow is closely based on LSST: refer to `their
+Our development workflow is closely based on LSST. Refer to `their
 documentation`_ for details.
 
 In particular, note the following:
@@ -145,9 +146,9 @@ Workflow
 When the assignee starts work on a given "Open" issue, the issue status should be moved to "In progress". 
 This will help managers and stakeholders know which issues are currently being
 addressed. Then, a corresponding 'ticket branch' should be created. 
-This is a git branch with the name "tickets/<jira-id>", 
-where "<jira-id> is the name of the JIRA ticket that is being worked on. 
-For example, when working on ticket “INFRA-26”, the branch ``tickets/INFRA-26`` 
+This is a git branch with the name ``tickets/<jira-id>``, 
+where ``<jira-id>`` is the name of the JIRA ticket that is being worked on. 
+For example, when working on ticket "INFRA-26", the branch ``tickets/INFRA-26`` 
 should be created in each of the repositories which are affected. 
 Having this convention helps team members see which branches are related to formal activities, 
 and which JIRA tickets track those activities, as opposed to informal development.
