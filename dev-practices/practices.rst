@@ -126,9 +126,9 @@ as it does have the advantage that JIRA highlights issues associated to a given 
 but it also has a significant limitation in that only one epic can be assigned to one ticket. 
 Because of that, this field will not be used for general project scheduling.
 
-In general, developers are encouraged to file issues. But please check existing open issues 
-in case the problem or activity has already been addressed,
- and where appropriate, your manager, before filing.
+In summary, developers are encouraged to file issues. But please check existing open issues 
+in case the problem or activity has already been addressed, 
+and where appropriate, your manager, before filing.
 
 The normal progression of issue status is “Open” (for a freshly created
 issue), to “In progress”, to “In Review”, to “Reviewed”, to “Done” (when a
@@ -153,9 +153,10 @@ should be created in each of the repositories which are affected.
 Having this convention helps team members see which branches are related to formal activities, 
 and which JIRA tickets track those activities, as opposed to informal development.
 
-While making your changes, it is highly recommended to include, or update, unit tests or the integration test 
+While making your changes, please where possible include, or update, unit tests or the integration test 
 to demonstrate that the updated code behaves as expected according to the issue description. 
-Please also provide or update documentation where appropriate so that users are aware of the change.
+Please also provide or update documentation where appropriate so that users are aware of the change, and there is sufficient text to be added
+to the corresponding release notes.
 
 Developers *must* ensure that all unit tests pass before merging code. Reviewers and
 developers are both responsible for checking this.
@@ -168,7 +169,7 @@ Then finally set the issue status to “In Review” and assign the same reviewe
 
 Please be aware that reviewers may be extremely busy so may not be able to review the issue immediately. 
 However, having a significant amount of code in branches pending to be merged for a long period of time is also problematic, 
-so to remedy such situations the developer should allow a maximum of 7 working days for the reviewer to take action. 
+so to remedy such situations the developer should allow a maximum of 5 working days for the reviewer to take action. 
 During that period, please take every reasonable opportunity to prompt the reviewer such that a timely review can be undergone. 
 After that period, if the reviewer has not taken any action, the developer may merge the code with no review.
 Please add a comment to the JIRA ticket indicating that action has been taken as such.
@@ -263,11 +264,6 @@ As you push new commits to the pull request, Travis will automatically trigger n
 Travis is triggered on GitHub pull requests, you should ensure you have pushed your work on a common ticket
 branch to all appropriate repos before making pull requests. If you want to signal Travis `not to
 automatically test a commit`_, add the text ``[ci skip]`` to your commit message.
-
-Unfortunately, due to Travis resource limitations, only 4 MB of logs can be generated. We therefore trap the
-build and test output and display only the last 100 lines when the process completes. If this makes it
-difficult to determine what's causing your build to fail, you can always run the integration test on the
-command-line of your own system.
 
 .. _Travis-CI: http://travis-ci.org
 .. _not to automatically test a commit: http://docs.travis-ci.com/user/customizing-the-build#Skipping-a-build
