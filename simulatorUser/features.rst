@@ -46,4 +46,4 @@ Dark frames
 -----------
 
 We add example dark frames (which include cosmic rays) to the image
-to simulate the detector read out proceess.
+to simulate the detector read out process.
