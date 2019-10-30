@@ -4,7 +4,8 @@ Using the Simulator
 ===================
 
 The main interface is a script to generate a single image.
-There is also a script that will generate a small dataset for testing the pipeline.
+There is also a script that will generate a small dataset
+for testing the pipeline.
 
 The first time the Simulator is run, it will generate a PSF model and cache it;
 this can take about an hour.
@@ -17,21 +18,23 @@ Initial setup
 ~~~~~~~~~~~~~~~~~
 
 The simulator requires a ``pfsDesign``
-file to tell it for which fibers are assigned 
-to which sources. If there is not such a file available, one can generate that using the
+file to tell it for which fibers are assigned to which sources.
+If there is not such a file available, one can generate that using the
 ``makePfsDesign`` command::
 
     makePfsDesign --fibers lam --pfsDesignId 1 --scienceCatId 1 --scienceObjId "18 55 71 76 93 94 105 112 115"
 
-The above command generates a file ``pfsDesign-0x0000000000000001.fits``, corresponding to a
-``pfsDesignId`` of ``1``, 
-mapping randomly objects with object identifiers listed in the value for the 
-``--scienceObjId`` option. These object identifiers are associated with a catalogue '``1``' 
-(the value of ``--scienceCatId``). The simulator will then look under 
+The above command generates a file ``pfsDesign-0x0000000000000001.fits``,
+corresponding to a ``pfsDesignId`` of ``1``,
+mapping randomly objects with object identifiers listed
+in the value for the ``--scienceObjId`` option.
+These object identifiers are associated with a catalogue '``1``'
+(the value of ``--scienceCatId``).
+The simulator will then look under
 the directory 1 (the scienceCatId) for the input spectra.
 
 The ``--fibers`` option allows the user to specify which fibers
-are illuminated from a set of combinations listed below: 
+are illuminated from a set of combinations listed below:
 
 * ``one``: fiber 315 only.
 * ``two``: fibers 311 and 315 only.
@@ -43,7 +46,8 @@ are illuminated from a set of combinations listed below:
 ``DRP_INSTDATA_DIR``
 ~~~~~~~~~~~~~~~~~~~~
 
-Also before running the simulator the envionment variable ``DRP_INSTDATA_DIR`` needs to be set to point
+Also before running the simulator the envionment variable ``DRP_INSTDATA_DIR``
+needs to be set to point
 to a recent version of the ``drp_instdata`` git repository. For example::
 
     cd /path/to
@@ -53,15 +57,17 @@ to a recent version of the ``drp_instdata`` git repository. For example::
 Location of input spectra
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The main simulator command, ``makeSim``, requires the corresponding object spectra
+The main simulator command, ``makeSim``, requires
+the corresponding object spectra
 as input. More specifically, the location of those input spectra.
 While this can be specified through the ``--spectraDir`` option, an alternative
 is to use the default value (which is the current working directory)
-and could create a symbolic link to your spectral files. 
-For example, if your input data are the ``lowz_COSMOS`` data 
+and could create a symbolic link to your spectral files.
+For example, if your input data are the ``lowz_COSMOS`` data
 from the ``drp_instdata`` repository, you could create a link as follows::
 
     ln -s /path/to/drp_instdata/data/objects/lowz_COSMOS/ 1
+
 where the ``1`` corresponds to the catalogue identifer
 of the source (ie the value of the ``scienceCatId``
 in the ``makePfsDesign`` example shown above).

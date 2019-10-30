@@ -7,13 +7,14 @@ The Simulator is written in `Python`_ version 3,
 and requires a number of python modules
 which must be installed prior to using the Simulator.
 We recommend `Using Docker`_ because this eliminates build problems
-and greatly simplifies user support through everyone sharing the same environment.
+and greatly simplifies user support through everyone sharing
+the same environment.
 The alternative is to do a `Manual Installation`_.
 
 .. _Python: https://www.python.org
 
 We recommend *not* using the pipeline in the same environment as the Simulator,
-as the presence of the large Simulator package, drp_instdata, in the environment
+as the presence of the large Simulator package, drp_instdata,in the environment
 causes long delays when the pipeline checks the versions of packages.
 Use a separate terminal (or ``screen``) for maximum efficiency.
 
@@ -29,8 +30,8 @@ To run a Docker image containing the Simulator, run::
 
     docker run -ti paprice/pfs_sim2d:latest
 
-You'll probably want to include some ``-v <machineDir>:<containerDir>`` arguments
-to map some directories from your machine to the Docker container,
+You'll probably want to include some ``-v <machineDir>:<containerDir>``
+arguments to map some directories from your machine to the Docker container,
 if only to persist files created by the simulator.
 
 Be sure to ``setup drp_instmodel`` to configure the environment.
@@ -50,7 +51,8 @@ We recommend you install and ``setup`` the PFS 2D DRP software,
 (which includes the LSST stack and the datamodel PFS package),
 and then install fitsio and the remaining PFS packages.
 
-You can check for the existence of the fitsio python module with the following shell command::
+You can check for the existence of the fitsio python module with
+the following shell command::
 
     python3 -c '
     try:
@@ -67,7 +69,8 @@ you can install them with ``pip3`` [#]_::
     pip3 install fitsio
 
 .. [#] ``pip3`` might simply be named ``pip`` on your system;
-       we use ``pip3`` here to emphasise that this is the ``pip`` that goes with python 3.
+       we use ``pip3`` here to emphasise that this is the ``pip``
+       that goes with python 3.
 
 Once the dependencies have been installed,
 clone the necessary PFS packages::
