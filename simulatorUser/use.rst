@@ -62,8 +62,9 @@ For example, if your input data are the ``lowz_COSMOS`` data
 from the ``drp_instdata`` repository, you could create a link as follows::
 
     ln -s /path/to/drp_instdata/data/objects/lowz_COSMOS/ 1
-where the ``1`` corresponds to the catalogue identifer of the source (ie the value of 
-the ``scienceCatId`` in the ``makePfsDesign`` example shown above).
+where the ``1`` corresponds to the catalogue identifer
+of the source (ie the value of the ``scienceCatId``
+in the ``makePfsDesign`` example shown above).
 
 
 Single image
@@ -74,38 +75,43 @@ and the associated ``pfsConfig`` file.
 An example command-line is::
 
     makeSim --detector r1 --pfsConfig --pfsDesignId 1 --exptime 0 --domeClosed --expId 0 --imagetyp BIAS
- 
+
 The ``--detector`` specifies the spectrograph and arm;
 we currently only support ``r1`` and ``b1``.
 
-The ``-pfsConfig`` determines whether a pfsConfig file will be 
+The ``-pfsConfig`` determines whether a pfsConfig file will be
 generated and written to file or not.
 
-The ``--pfsDesignId`` specifies the fiber setup. You need to have a 
-``pfsDesign-0xNNNNNNNNNNNNNNNN.fits`` file present in the current working directory,
-where ``NNNNNNNNNNNNNNNN`` is the 16-digit hexadecimal representation of the 
-designId you have
+The ``--pfsDesignId`` specifies the fiber setup. You need to have a
+``pfsDesign-0xNNNNNNNNNNNNNNNN.fits`` file present
+in the current working directory,
+where ``NNNNNNNNNNNNNNNN`` is the 16-digit
+hexadecimal representation of the designId you have
 specified in the ``--pfsDesignId`` argument.
 
 ``--exptime`` specifies the exposure time in seconds.
 This is used to scale the input spectrum.
 
-``--domeClosed`` determines whether the sky background is included or not. 
+``--domeClosed`` determines whether the sky background is
+included or not.
 If present, the sky background will not be included.
 
 ``--expId`` specifies the exposure identifier to use.
 This is used in the filename.
 
 ``--imagetyp`` specifies the image type.
-This is used in the header.
+This is used in the header. Allowed values are
+BIAS, DARK, FLAT, ARC and OBJECT.
 
 ``--allOutput`` specifies that the Simulator
 should write additional FITS extensions
 containing information.
 
-``--pdb`` specifies that the program should drop into the debugger in the event of an exception.
+``--pdb`` specifies that the program should drop into the
+debugger in the event of an exception.
 
-There are additional arguments, which will be provided in future releases of this document.
+There are additional arguments, which will be provided in
+future releases of this document.
 
 Multiple images
 ---------------
@@ -119,7 +125,7 @@ in order to generate a dataset containing:
 * 1 Ne arc
 * 2 science exposures
 
-This requires one parameter (the ``pfsDesignId`` corresponding to the pfsDesign to use) 
-and an optional second parameter 
-(a second ``pfsDesignId`` corresponding to another pfsDesign for a 
+This requires one parameter (the ``pfsDesignId``
+corresponding to the pfsDesign to use) and an optional second parameter
+(a second ``pfsDesignId`` corresponding to another pfsDesign for a
 single dome-open, 900-second exposure).
