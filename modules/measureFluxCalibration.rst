@@ -56,7 +56,7 @@ Here is an example definition::
 
             Returns
             -------
-            results : `list` of `pfs.datamodel.PfsObject`
+            results : `list` of `pfs.datamodel.PfsSingle`
                 Flux-calibrated object spectra.
             """
             ...

@@ -66,7 +66,7 @@ Useful methods include:
 ``PfsSpectrum`` is similar to :ref:`PfsSimpleSpectrum`.
 This is the spectrum for a single object,
 but it is suitable for spectra from observations.
-This is the base class of the ``pfsObject`` and ``pfsCoadd`` files.
+This is the base class of the ``pfsSingle`` and ``pfsObject`` files.
 Useful attributes include:
 
 * ``wavelength``: wavelength array (nm), of dimension ``M``.

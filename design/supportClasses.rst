@@ -60,7 +60,7 @@ A ``SpectrumSet`` is a collection of ``Spectrum``\ s.
 This is typically used to carry extracted spectra from observations,
 but it could also be used for reference spectra in physical units.
 
-A ``Spectrum`` is persisted as a ``PfsObject``,
+A ``Spectrum`` is persisted as a ``PfsSingle``,
 while a ``SpectrumSet`` is persisted as a ``PfsSpectra``.
 
 These classes will be implemented in the ``drp_stella`` package in C++
@@ -117,10 +117,10 @@ However, it will be used to persist data contained in ``SpectrumSet``,
 and we will provide functions for converting between the two.
 
 
-``PfsObject``
+``PfsSingle``
 ^^^^^^^^^^^^^
 
-A ``PfsObject`` is a single spectrum of a particular object.
+A ``PfsSingle`` is a single spectrum of a particular object.
 It is the formal I/O representation of such in the PFS Datamodel.
 
 The principal capabilities are:

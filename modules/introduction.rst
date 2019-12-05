@@ -30,11 +30,11 @@ fits physical flux models to the flux standards,
 and writes these as ``pfsReference`` files.
 The ``fluxCalibrate`` procedure uses the ``pfsMerged`` and ``pfsReference`` files to
 calculate and apply the flux calibration,
-writing the flux calibrated single-exposure spectra as ``pfsObject`` files.
+writing the flux calibrated single-exposure spectra as ``pfsSingle`` files.
 Finally, the ``coaddSpectra`` procedure reads the ``pfsArm`` files from multiple exposures,
 applies the various calibrations measured throughout the pipeline,
 coadds the multiple observations of individual targets,
-and writes the coadded spectra as ``pfsCoadd`` files.
+and writes the coadded spectra as ``pfsObject`` files.
 
 .. _pfsScience:
 
@@ -165,7 +165,7 @@ The following classes are useful building blocks of the algorithmic modules:
   similar to ``PfsSimpleSpectrum``,
   this is the spectrum for a single object,
   but it is suitable for spectra from observations.
-  This is the base class of the ``pfsObject`` and ``pfsCoadd`` files.
+  This is the base class of the ``pfsSingle`` and ``pfsObject`` files.
   Useful attributes include:
 
   + ``wavelength``: wavelength array (nm), of dimension ``M``.

@@ -99,13 +99,13 @@ These are the main science products of the pipeline.
   sky-subtracted, wavelength-calibrated spectra from a single arm of a single spectrograph,
   from :ref:`reduceExposure`.
   Since these spectra have not been resampled after extraction,
-  this may be useful for identifying cosmic-ray hits masquerading as emission lines in the ``pfsObject`` or ``pfsCoadd``.
-* ``pfsObject`` (``pfs.datamodel.PfsObject``):
+  this may be useful for identifying cosmic-ray hits masquerading as emission lines in the ``pfsSingle`` or ``pfsObject``.
+* ``pfsSingle`` (``pfs.datamodel.PfsSingle``):
   flux-calibrated, barycentric wavelength-calibrated object spectrum from a single exposure,
   from :ref:`fluxCalibrate`.
   This is useful for investigating variations from exposure to exposure,
-  or identifying cosmic-ray hits masquerading as emission lines in the ``pfsCoadd``.
-* ``pfsCoadd`` (``pfs.datamodel.PfsObject``):
+  or identifying cosmic-ray hits masquerading as emission lines in the ``pfsObject``.
+* ``pfsObject`` (``pfs.datamodel.PfsSingle``):
   coadded spectrum from multiple exposures,
   from :ref:`coaddSpectra`.
   This is the main science product that most science users will want.

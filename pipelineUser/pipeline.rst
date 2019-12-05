@@ -18,11 +18,11 @@ fits physical flux models to the flux standards,
 and writes these as ``pfsReference`` files.
 The ``fluxCalibrate`` procedure uses the ``pfsMerged`` and ``pfsReference`` files to
 calculate and apply the flux calibration,
-writing the flux calibrated single-exposure spectra as ``pfsObject`` files.
+writing the flux calibrated single-exposure spectra as ``pfsSingle`` files.
 Finally, the ``coaddSpectra`` procedure reads the ``pfsArm`` files from multiple exposures,
 applies the various calibrations measured throughout the pipeline,
 coadds the multiple observations of individual targets,
-and writes the coadded spectra as ``pfsCoadd`` files.
+and writes the coadded spectra as ``pfsObject`` files.
 
 .. _pfsScience:
 
@@ -113,12 +113,12 @@ we don't anticipate science users having much interest in them.
 
 ``fluxCalibrate.py`` reads the ``pfsMerged`` and ``pfsReference`` files,
 fits a flux calibration model,
-and writes ``fluxCal`` and ``pfsObject`` files::
+and writes ``fluxCal`` and ``pfsSingle`` files::
 
     fluxCalibrate.py /path/to/dataRepo --calib /path/to/calibRepo --rerun pipeline --id field=OBJECT
 
 The ``fluxCal`` files will be used by ``coaddSpectra``.
-The ``pfsObject`` files are not used by the pipeline,
+The ``pfsSingle`` files are not used by the pipeline,
 but may be of interest to science users:
 since they contain the full-wavelength, flux-calibrated spectra from single observations,
 they will be of use for those interested in spectra variability.
@@ -129,12 +129,12 @@ they will be of use for those interested in spectra variability.
 
 ``coaddSpectra.py`` reads the ``pfsArm``, ``sky1d`` and ``fluxCal`` files [#]_,
 coadds all spectra of repeat observations,
-and writes ``pfsCoadd`` files::
+and writes ``pfsObject`` files::
 
     coaddSpectra.py /path/to/dataRepo --calib /path/to/calibRepo --rerun pipeline --id field=OBJECT
 
 .. [#] The current implementation doesn't read or use the ``sky1d`` or ``fluxCal`` files.
        Whoops, sorry.
 
-The ``pfsCoadd`` files are the principal science product of the 2D pipeline,
+The ``pfsObject`` files are the principal science product of the 2D pipeline,
 since they are the full-wavelength, flux-calibrated, coadded spectra from multiple observations.

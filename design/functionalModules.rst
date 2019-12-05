@@ -341,7 +341,7 @@ The final product is the wavelength-calibrated, flux-calibrated spectra for the 
 
 * Output datasets:
 
-  + ``pfsObject``: flux-calibrated object spectra; primary product.
+  + ``pfsSingle``: flux-calibrated object spectra; primary product.
   + ``fluxCal``: flux calibration parameters.
 
 * Algorithmic details:
@@ -373,7 +373,7 @@ specifically, the one-dimensional sky subtraction and flux calibration.
 
 * Output datasets:
 
-  + ``pfsCoadd``: coadded spectrum; primary product.
+  + ``pfsObject``: coadded spectrum; primary product.
 
 * Algorithmic details:
 
