@@ -89,4 +89,5 @@ Then declare each of the the two PFS packages::
     eups declare drp_instdata git -t current -r /path/to/drp_instdata
     eups declare drp_instmodel git -t current -r /path/to/drp_instmodel
 
-Each time you use the simulator, you'll need to ``setup drp_instmodel``.
+Each time you use the simulator, you'll need to ``setup drp_instmodel``
+and ``setup drp_instdata``.

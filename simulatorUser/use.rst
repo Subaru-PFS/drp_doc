@@ -14,6 +14,17 @@ Subsequent executions will be much faster.
 Initial setup
 -------------
 
+Setup ``drp_instdata`` and ``drp_instmodel``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+As mentioned in :ref:`man-install`, before running
+the simulator the ``drp_instdata``
+and ``drp_instmodel`` repositories need to be ``setup``::
+
+    setup drp_instdata
+    setup drp_instmodel
+
+
 ``makePfsDesign``
 ~~~~~~~~~~~~~~~~~
 
@@ -43,16 +54,6 @@ are illuminated from a set of combinations listed below:
 * ``even``: every other fiber, starting with the second.
 * ``all``: all fibers.
 
-``DRP_INSTDATA_DIR``
-~~~~~~~~~~~~~~~~~~~~
-
-Also before running the simulator the envionment variable ``DRP_INSTDATA_DIR``
-needs to be set to point
-to a recent version of the ``drp_instdata`` git repository. For example::
-
-    cd /path/to
-    git clone https://github.com/Subaru-PFS/drp_instdata.git
-    setup -jr drp_instdata
 
 Location of input spectra
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -73,8 +74,8 @@ of the source (ie the value of the ``scienceCatId``
 in the ``makePfsDesign`` example shown above).
 
 
-Single image
-------------
+Simulating a single image
+-------------------------
 
 The ``makeSim`` script runs the Simulator to produce a single image
 and the associated ``pfsConfig`` file.

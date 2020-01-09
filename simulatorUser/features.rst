@@ -31,7 +31,7 @@ For simulations requiring a sky spectrum, a single realization is provided,
 with no variation over the field.
 The spectrum is based on no moon and an airmass of 1.3,
 corresponding to the expected conditions at the
-Mauna Kea summit. See section 3.2.3 of the `PFS Expected Performance Document 
+Mauna Kea summit. See section 3.2.3 of the `PFS Expected Performance Document
 <https://sumire.pbworks.com/w/file/fetch/129441444/PFS-GEN-IPM003001-01_pfs_expected_performance_KYabe_20170731.pdf>`_
 for more information on the characteristics of the sky spectrum.
 
