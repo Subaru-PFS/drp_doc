@@ -34,8 +34,10 @@ You'll probably want to include some ``-v <machineDir>:<containerDir>``
 arguments to map some directories from your machine to the Docker container,
 if only to persist files created by the simulator.
 
-Be sure to ``setup drp_instmodel`` to configure the environment.
+Be sure to ``setup drp_instmodel`` and ``setup drp_instdata``
+to configure the environment.
 
+.. _man-install:
 
 Manual Installation
 -------------------
@@ -66,7 +68,7 @@ the following shell command::
 If that command reveals that it is missing,
 you can install them with ``pip3`` [#]_::
 
-    pip3 install fitsio
+    python3 -m pip install fitsio
 
 .. [#] ``pip3`` might simply be named ``pip`` on your system;
        we use ``pip3`` here to emphasise that this is the ``pip``
@@ -84,7 +86,7 @@ and can take a while to download.
 .. |git-lfs| replace:: ``git-lfs``
 .. _git-lfs: https://git-lfs.github.com
 
-Then declare each of the the two PFS packages::
+Then declare each of the two PFS packages::
 
     eups declare drp_instdata git -t current -r /path/to/drp_instdata
     eups declare drp_instmodel git -t current -r /path/to/drp_instmodel
