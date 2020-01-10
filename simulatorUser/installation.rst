@@ -45,12 +45,12 @@ Manual Installation
 The Simulator requires the LSST stack
 (at least up to and including the afw package),
 the `fitsio`_ python module (which is not provided in the LSST stack),
-and the datamodel, drp_instdata and drp_instmodel PFS packages.
+and the datamodel, drp_stella, drp_instdata and drp_instmodel PFS packages.
 
 .. _fitsio: https://pypi.org/project/fitsio/
 
 We recommend you install and ``setup`` the PFS 2D DRP software,
-(which includes the LSST stack and the datamodel PFS package),
+(which includes the LSST stack and the datamodel and drp_stella PFS packages),
 and then install fitsio and the remaining PFS packages.
 
 You can check for the existence of the fitsio python module with

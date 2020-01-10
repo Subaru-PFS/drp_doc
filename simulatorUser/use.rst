@@ -18,9 +18,10 @@ Setup ``drp_instdata`` and ``drp_instmodel``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As mentioned in :ref:`man-install`, before running
-the simulator the ``drp_instdata``
+the simulator the ``pfs_pipe2d``, ``drp_instdata``
 and ``drp_instmodel`` repositories need to be ``setup``::
 
+    setup pfs_pipe2d
     setup drp_instdata
     setup drp_instmodel
 
