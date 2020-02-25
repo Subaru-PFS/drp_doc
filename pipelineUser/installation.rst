@@ -197,7 +197,6 @@ Dependencies
 The LSST stack, on which the PFS software is built,
 requires the following Redhat/CentOS packages::
 
-    epel-release
     bison curl blas bzip2-devel bzip2 flex fontconfig
     freetype-devel git libuuid-devel
     libXext libXrender libXt-devel make openssl-devel patch perl
@@ -211,7 +210,17 @@ and install the packages you need for your system.
 
 .. _prerequisites for the LSST stack: https://pipelines.lsst.io/install/newinstall.html#prerequisites
 
-In addition to the above, |git-lfs|_ should be installed.
+In addition to the above, |git-lfs|_ must be installed,
+which involves installing both the binaries (usually through your system's package manager)
+and the user configuration (``git lfs install``).
+On Redhat/CentOS, this is a matter of::
+
+    # Install the binaries
+    sudo yum install -y epel-release
+    sudo curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.rpm.sh | bash
+    sudo yum install -y git-lfs
+    # Set up user configurations
+    git lfs install
 
 .. |git-lfs| replace:: ``git-lfs``
 .. _git-lfs: https://git-lfs.github.com
