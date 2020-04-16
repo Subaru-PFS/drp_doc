@@ -4,7 +4,7 @@ Installation
 ============
 
 The PFS 2D DRP uses components from the `LSST Data Management stack`_.
-We currently use ``v16_0`` of the LSST stack,
+We currently use ``v18.1.0`` of the LSST stack,
 so installing the PFS 2D DRP requires also installing this version of the LSST stack.
 There are multiple ways of installing these.
 
