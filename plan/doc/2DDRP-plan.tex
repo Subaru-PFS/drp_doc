@@ -1,0 +1,87 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+%
+\usepackage{color}
+\usepackage[colorlinks=true, citecolor=blue, linktocpage=true]{hyperref} % glossary colour is set in style
+\usepackage{xspace}
+\usepackage{import}
+\usepackage[titletoc,title]{appendix}
+\usepackage[margin=1.0in,nohead,nofoot]{geometry}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{float}
+%\usepackage[titletoc,title]{appendix}
+%\usepackage[style=authoryear, uniquename=false, backend=bibtex]{biblatex}
+%\usepackage{journals}
+\usepackage[acronym,nonumberlist,toc,xindy]{glossaries}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage{rotating}
+%\bibliography{XXX}
+%------------------------------------------------------------------------------
+
+\renewcommand{\c}{\textit{c.}\xspace}
+\newcommand{\cf}{\textit{cf.}\xspace}
+\newcommand{\eg}{\textit{e.g.}\xspace}
+\newcommand{\etc}{\textit{etc.}\xspace}
+\newcommand{\ie}{\textit{i.e.}\xspace}
+\newcommand{\nb}{\textit{n.b.}\xspace}
+\newcommand{\Nb}{\textit{N.b.}\xspace}
+
+%
+% Convenient (but unnecessary) abbreviations
+%
+\newcommand{\ICS}{\gls{ICS}\xspace}
+\newcommand{\MHS}{\gls{MHS}\xspace}
+\newcommand{\PFS}{\gls{PFS}\xspace}
+\newcommand{\SPS}{\gls{SPS}\xspace}
+\newcommand{\TBD}{\gls{TBD}\xspace}
+
+\newcommand{\jupyter}{\gls{jupyter}\xspace}
+\newcommand{\ssh}{\gls{ssh}\xspace}
+
+%------------------------------------------------------------------------------
+
+\newcommand{\XXX}[1]{\textbf{XXX: #1}}
+\newcommand{\appRef}[1]{Appendix \ref{sec:#1}} % n.b. same prefix (sec:) as \secRef
+\newcommand{\secRef}[1]{Section \ref{sec:#1}}
+
+%------------------------------------------------------------------------------
+
+\import{.}{initializeGlossary}
+% \import{../misc/}{PFS_Abbreviations}
+\import{.}{glossaryEntries}
+
+%------------------------------------------------------------------------------
+
+\begin{document}
+\title{2D DRP Plan \\ \large PFS-DRP-PRU030002-01}
+\author{Hassan Siddiqui and PFS team}
+ \date{2021-04-07\\Issue 0.5}
+\maketitle
+
+\tableofcontents
+\newpage
+
+%
+% Introduction
+%
+\import{.}{changelog}
+\import{.}{intro}
+\import{.}{timeline}
+\import{.}{tasks}
+
+%\footnotesize
+%\begin{landscape}
+%\import{.}{table}
+%\end{landscape}
+%\normalsize
+
+%------------------------------------------------------------------------------
+%
+% Print acronyms/glossaries
+%
+%\printglossary[type=\acronymtype]
+%\printglossary
+
+\end{document}

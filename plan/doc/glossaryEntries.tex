@@ -1,0 +1,188 @@
+%
+% New entries can be made in one of three ways:
+%
+%   \newacronym{LaTeX name}{Acronym}{Expansion}
+%
+%   \newglossaryentry{LaTeX name}{name={Expansion}, description={Description}}
+%
+%   \newdualentry{LaTeX name}
+%   {Acronym}
+%   {Expansion}
+%   {Description}
+%
+\newglossaryentry{AlertsActor}
+{
+  name={AlertsActor},
+  description={Actor that sends alerts to the STS}
+}
+
+\newglossaryentry{cobraCharmer}
+{
+  name={cobraCharmer},
+  description={the low-level python library that is used to control low-level cobra moves}
+}
+
+\newglossaryentry{cobraOps}
+{
+  name={cobraOps},
+  description={The python library that plans how to use \gls{cobraCharmer} to move
+  the cobras to desired positions}
+}
+
+\newglossaryentry{ds9}
+{
+  name={ds9},
+  description={An old but moderately popular image display tool from CfA}
+}
+
+\newglossaryentry{gen2actor}
+{
+  name={gen2actor},
+  description={The \MHS actor that talks to \gls{Gen2}}
+}
+
+\newdualentry{FPGA}
+{FPGA}
+{Field Programmable Gate Array}
+{In PFS ``FPGA'' refers to the hardware which runs the cobras}
+\glsunset{FPGA}
+
+\newacronym{ISR}{ISR}{Instrumental Signature Removal}
+
+\newglossaryentry{Gaia}
+{
+  name={Gaia},
+  description={An ESA satellite producing astrometric and photometric catalogues to \c 21st
+  magnitude over the entire sky}
+}
+
+\newglossaryentry{GaiaBPRP}
+{
+  name={\texttt{BP - RP}},
+  description={The ``blue - red'' colour measured by \gls{Gaia} using grisms}
+}
+
+\newglossaryentry{GaiaG}
+{
+  name={\texttt{G}},
+  description={The very broad-band flux measured by \gls{Gaia}}
+}
+
+\newglossaryentry{ginga}
+{
+  name={ginga},
+  description={A python-based image display tool developed at Subaru}
+}
+
+\newglossaryentry{H4RG}
+{
+   name={H4RG},
+   description={A $4k\times 4k$ hybrid CMOS detector using a layer of \texttt{HgCdTe} to convert photons
+   to photo-electrons}
+}
+
+\newglossaryentry{jupyter}
+{
+  name={Jupyter},
+  description={A popular web-based notebook environment, supporting interactive editing
+    and execution of python code (its support for other languages such as R is not of interest to PFS)}
+}
+
+\newglossaryentry{Kalman filter}
+{
+   name={Kalman filter},
+   description={A way of estimating the curent state of a process, given a set of values and
+   a statistical model}
+}
+
+\newacronym{LSST}{LSST}{Large Survey Synoptic Telescope}
+\glsunset{LSST}
+
+\newglossaryentry{matplotlib}
+{
+  name={matplotlib},
+  description={A plotting package for python, useful for line plots and with some support for images}
+}
+
+\newglossaryentry{motor map}
+{
+  name={motor map},
+  description={The mapping from commanded number of steps to expected distance moved for cobras}
+}
+
+\newdualentry{NIR}{NIR}{Near InfraRed}
+{The \texttt{n} arm of the \PFS spectrographs, using \gls{H4RG} detectors}
+
+\newglossaryentry{opDB}
+{
+  name={opDB},
+  description={The operational database used to control and track \gls{PFS} operations}
+}
+
+\newglossaryentry{pandas}
+{
+  name={pandas},
+  description={a python data library widely used in astronomy}
+}
+
+\newglossaryentry{pfsConfig}
+{
+  name={\texttt{pfsConfig}},
+  description={The file giving the best estimate of the actual fibre positions corresponding to
+  a \gls{pfsDesign} file;
+  see \href{https://github.com/Subaru-PFS/datamodel/blob/master/datamodel.txt}{the data model}}
+}
+
+\newglossaryentry{pfsDesign}
+{
+  name={\texttt{pfsDesign}},
+  description={The file used to specify the desired positions of all the fibres;
+  see \href{https://github.com/Subaru-PFS/datamodel/blob/master/datamodel.txt}{the data model}}
+}
+
+\newacronym{PSF}{PSF}{Point Spread Function}
+\glsunset{PSF}
+
+\newglossaryentry{pyQt5}
+{
+  name={pyQt5},
+  description={The python bindings to the popular QT5 library for building GUI displays}
+}
+
+\newdualentry{ROI}{RoI}{Region of Interest}
+{The sub-region ``of interest'' of a detector which is read;  usually used for guiding}
+
+\newacronym{SNR}{SNR}{Signal to Noise Ratio}
+\glsunset{SNR}
+
+\newglossaryentry{ssh}
+{
+  name={ssh},
+  description={A secure protocol for logging into remote computers, and (using \textit{tunnels})
+    using other network-based services}
+}
+
+\newdualentry{SPS}
+{SpS}
+{Spectrograph System}
+{The software which commands cobra motions}
+
+\newacronym{SuNSS}{SuNSS}{Subaru Night Sky Spectrograph}
+
+\newacronym{TBD}{TBD}{To Be Decided}
+\glsunset{TBD}
+
+\newglossaryentry{visit}
+{
+  name={visit},
+  description={The unique integer that defines the readout of the \SPS cameras.  Other data
+  will be defined in terms of this number (\eg a counter for \AGC reads starting at 0 for
+  each new \gls{visit})}
+}
+
+\newdualentry{VNC}{VNC}{Virtual Network Computing}
+{A way of allowing a user to connect to and control the display of a remote computer, including sending
+mouse and keyboard events.  In general more than one user may connect to the same remote machine}
+
+\newdualentry{VPN}{VPN}{Virtual Private Network}
+{A way to securely extend a local private network to selected remote machines}

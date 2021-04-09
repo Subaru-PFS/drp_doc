@@ -1,0 +1,25 @@
+%------------------------------------------------------------------------------
+% glossaries
+%
+% Add
+%   \printglossary[type=\acronymtype]
+%   \printglossary
+% to the end of the main TeX file after importing this file in the preamble, and creating
+% a file glossaryEntries.tex
+%
+\definecolor{brown}{rgb}{0.65,0.16,0.16}
+\renewcommand*{\glstextformat}[1]{\textcolor{brown}{#1}}
+
+% Syntax: \newdualentry[glossary options][acronym options]{label}{abbrv}{long}{description}
+% (see https://en.wikibooks.org/wiki/LaTeX/Glossary)
+%
+\newcommand*{\newdualentry}[5][]{%
+  \newglossaryentry{main-#2}{name={#4},%
+  text={#3\glsadd{#2}},%
+  description={#5},%
+  #1
+  }%
+  \newacronym{#2}{#2}{\glslink{main-#2}{#4}}%
+}
+%
+\makeglossaries
