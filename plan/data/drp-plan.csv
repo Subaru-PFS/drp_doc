@@ -29,10 +29,10 @@ OH line modelling,2021-07-01,2022-12-01,0,SkyModelling, "Using data acquired fro
 SuNSS sky model, 2021-02-01, 2022-12-01,0,SkyModelling, "Using data acquired from the SuNSS instrument, model the sky background", 10, 30, 0, 0, 0, 0, 0, 0, 0, 0
 Sky subtraction,2022-02-01,2024-01-01,0,SkyModelling, "Using a sky model, implement a sky subtraction algorithm in the pipeline.", 60, 5, 0, 0, 0, 0, 0, 0, 0, 0
 Sky subtraction QA,2021-08-01,2024-01-01,0,SkyModelling, "QA ", 10, 5, 0, 0, 0, 0, 0, 10, 0, 0
-Flux Calibration: SEDs,2020-12-01,2021-02-01,0,GeneralCalibration, "Define the datamodel for an SED", 0, 0, 0, 0, 0, 15, 0, 0, 0, 0
+Flux Calibration: SEDs,2020-12-01,2021-06-01,0,GeneralCalibration, "Define the datamodel for an SED", 0, 0, 0, 0, 0, 15, 0, 0, 0, 0
 Flux Calibration: interpolation,2020-02-01,2020-09-01,0,GeneralCalibration, "Interpolate the AMBRE model spectra to get an accurate spectral energy distribution for a given set of stella parameters.", 0, 0, 0, 0, 0, 20, 0, 0, 0, 0
-Flux Calibration: spectral typing,2020-11-01,2021-05-01,0, GeneralCalibration,"Whiten spectra and recover input spectral shape", 0, 0, 0, 0, 0, 20, 0, 0, 0
-Flux Calibration: f-star selection,2021-01-01,2021-03-01,0,GeneralCalibration, "Determine F-star candidates that can be used for flux calibration.", 0, 0, 0, 0, 0, 10, 0, 0, 0, 0
+Flux Calibration: spectral typing,2020-11-01,2021-06-01,0, GeneralCalibration,"Whiten spectra and recover input spectral shape", 0, 0, 0, 0, 0, 20, 0, 0, 0
+Flux Calibration: f-star selection,2021-01-01,2021-08-01,0,GeneralCalibration, "Determine F-star candidates that can be used for flux calibration.", 0, 0, 0, 0, 0, 10, 0, 0, 0, 0
 Bias/Dark/Flat QA,2020-09-01,2021-03-01,0,GeneralCalibration, "Validate quality of Bias/Dark/Flat processing", 1, 0, 0, 0, 0, 0, 0, 30, 0, 0
 NIR processing,2021-01-01,2021-12-01,0,GeneralCalibration, "Implement support for processing NIR data in the 2D DRP pipeline.", 20, 0, 0, 0, 0, 0, 0, 0, 20, 0
 Quartz color filter calibration,2022-01-01,2022-04-01,0,GeneralCalibration, "Correct for absorption effects caused by the quartz color filter.", 10, 5, 0, 0, 0, 0, 0, 0, 0, 0
