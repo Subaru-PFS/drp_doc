@@ -106,7 +106,7 @@ def plot_plan(plan_file):
     fig.show(renderer='browser')
 
 
-# In[ ]:
+# In[7]:
 
 
 plot_plan('../data/drp-plan.csv')
