@@ -197,3 +197,42 @@ Useful methods include:
 * ``findWavelength``: find the wavelength for a fiber and a row on the detector.
 * ``getWavelength``: retrieve the wavelength calibration for a fiber or all fibers.
 * ``getXCenter``: retrieve the column position for a fiber or all fibers.
+
+
+We have two ``DetectorMap`` implementations:
+``SplinedDetectorMap`` and ``DistortedDetectorMap``.
+
+The ``SplinedDetectorMap`` implements the mapping
+between ``(x,y)`` and ``(fiberId,wavelength)``
+as a pair of splines for each fiber:
+
+.. math::
+    \lambda = f_i(y) \\
+    x = g_i(y)
+
+where :math:`\lambda` is the wavelength,
+:math:`f_i` and :math:`g_i` are splines for the fiber of interest
+(the mappings are one-to-one, so we can invert them)
+and :math:`x` and :math:`y` are the positions according to the optical model.
+This is used for the detectorMap generated from the optical model of the spectrograph,
+where we know the position on the detector for spots of certain wavelengths for the different fibers.
+Because this is based on the optical model used to design the instrument,
+this has the advantage that we know the mapping even in regions where the signal-to-noise is low
+(e.g., in regions strongly affected by the dichroic)
+but is only relevant on its own for data from the simulator
+(which is based on the same optical model).
+
+The ``DistortedDetectorMap`` takes the ``SplinedDetectorMap`` from the optical model
+and layers a distortion field on top,
+along with an affine transform for one of the CCDs:
+
+.. math::
+
+   x' = P(x,y) + R(x, y) \\
+   y' = Q(x,y) + S(x, y)
+
+Where :math:`x` and :math:`y` are the positions according to the optical model,
+:math:`P` and :math:`Q` are 2D polynomials,
+and :math:`R` and `S` are first-order 2D polynomials in :math:`x` and :math:`y`
+(i.e., an affine transform)
+that are only applied when :math:`x > 2048` (i.e., the right-hand CCD).
