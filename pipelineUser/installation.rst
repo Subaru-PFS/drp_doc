@@ -344,15 +344,20 @@ Install PFS packages
 
 Install the following PFS packages, in this order:
 
+* `pfs_utils`_
 * `datamodel`_
 * `obs_pfs`_
+* `drp_pfs_data`_ [#]_
 * `drp_stella`_
 * `pfs_pipe2d`_ [#]_
 
+.. _pfs_utils: https://github.com/Subaru-PFS/pfs_utils
 .. _datamodel: https://github.com/Subaru-PFS/datamodel
 .. _obs_pfs: https://github.com/Subaru-PFS/obs_pfs
+.. _drp_pfs_data: https://github.com/Subaru-PFS/drp_pfs_data
 .. _drp_stella: https://github.com/Subaru-PFS/drp_stella
 .. _pfs_pipe2d: https://github.com/Subaru-PFS/pfs_pipe2d
+.. [#] The ``drp_pfs_data`` package requires use of ``git-lfs``.
 .. [#] The ``pfs_pipe2d`` package is not strictly necessary for running the PFS 2D DRP,
        but it contains the integration test, which is useful for validating the installation.
 
