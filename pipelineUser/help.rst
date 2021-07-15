@@ -7,9 +7,10 @@ If you encounter problems installing the LSST stack,
 please first search the `LSST pipelines installation documentation`_,
 and the `LSST Community site`_,
 and if your question is not answered there,
-please ask a question on the `LSST Community site`_.
+please ask a question on the `LSST Community site`_
+(be sure to mention what LSST stack version you're attempting to install: ``18.1.0``).
 
-.. _LSST pipelines installation documentation: https://pipelines.lsst.io/install/newinstall.html
+.. _LSST pipelines installation documentation: https://pipelines.lsst.io/v/v18_1_0/install/newinstall.html
 .. _LSST Community site: https://community.lsst.org
 
 If you encounter problems installing or using the PFS 2D DRP software,
