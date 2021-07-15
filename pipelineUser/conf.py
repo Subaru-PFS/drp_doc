@@ -140,6 +140,7 @@ latex_documents = [
      'The PFS 2D Pipeline Team', 'manual'),
 ]
 
+latex_engine = 'xelatex'
 
 # -- Options for manual page output ------------------------------------------
 
