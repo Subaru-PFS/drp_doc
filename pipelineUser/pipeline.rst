@@ -72,6 +72,29 @@ The exception is when looking for potential contamination of one spectrum by its
 as the ``pfsArm`` preserves the sampling from the image
 (i.e., no interpolation has been applied).
 
+Because this is an important element of the pipeline
+that some will want to use without the rest of the pipeline,
+we provide here an overview of the operation:
+
+* Instrument signature removal and repair (CR masking, static bad pixels)
+* Wrangle spectral calibs:
+    * Read ``fiberProfiles``
+    * Measure line centroids
+    * Read ``detectorMap``
+    * Perform low-order adjustment using measured centroids
+    * Write adjusted detectorMap as ``detectorMap_used``
+    * Measure line fluxes
+* Measure PSF and resulting LSF
+* 2D sky subtraction
+* Extract spectrum
+    * Optional 2D continuum subtraction
+* Write outputs:
+    * ``calexp``: exposure, with 2D continuum subtracted if suitably configured
+    * ``pfsArmLsf``: line-spread function
+    * ``sky2d``: 2D sky subtraction model
+    * ``pfsArm``: extracted spectra
+    * ``arcLines``: line centroids+fluxes
+
 
 ``mergeArms``
 -------------
