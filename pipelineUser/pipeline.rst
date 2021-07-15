@@ -36,9 +36,6 @@ and that we do not expect will be used on real science data.
 Use of these placeholder algorithms has allowed
 the development of the full end-to-end pipeline
 before the details of the final algorithms are known.
-Moving forward, our principle goal is
-to improve the quality of these algorithms
-in preparation for processing real science data.
 
 
 ``detrend``
@@ -101,14 +98,10 @@ we provide here an overview of the operation:
 
 ``mergeArms.py`` reads the ``pfsArm`` files,
 subtracts any residual sky from the 1D spectra,
-and merges the spectra from the multiple arms [#]_,
+and merges the spectra from the multiple arms,
 writing the ``sky1d`` and ``pfsMerged`` files::
 
-mergeArms.py /path/to/dataRepo --calib /path/to/calibRepo --rerun pipeline --id field=OBJECT
-
-.. [#] We don't currently have any data with multiple arms,
-       but this is part of the pipeline because ultimately we will have data with multiple arms,
-       and also because this module contains the 1D sky subtraction.
+    mergeArms.py /path/to/dataRepo --calib /path/to/calibRepo --rerun pipeline --id field=OBJECT
 
 The ``sky1d`` files will be used by ``coaddSpectra``.
 The ``pfsMerged`` files will be used by ``calculateReferenceFlux`` and ``fluxCalibrate``.
@@ -150,14 +143,11 @@ they will be of use for those interested in spectra variability.
 ``coaddSpectra``
 ----------------
 
-``coaddSpectra.py`` reads the ``pfsArm``, ``sky1d`` and ``fluxCal`` files [#]_,
+``coaddSpectra.py`` reads the ``pfsArm``, ``sky1d`` and ``fluxCal`` files,
 coadds all spectra of repeat observations,
 and writes ``pfsObject`` files::
 
     coaddSpectra.py /path/to/dataRepo --calib /path/to/calibRepo --rerun pipeline --id field=OBJECT
-
-.. [#] The current implementation doesn't read or use the ``sky1d`` or ``fluxCal`` files.
-       Whoops, sorry.
 
 The ``pfsObject`` files are the principal science product of the 2D pipeline,
 since they are the full-wavelength, flux-calibrated, coadded spectra from multiple observations.

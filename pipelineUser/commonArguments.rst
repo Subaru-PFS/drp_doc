@@ -224,7 +224,7 @@ This is useful in combination with the ``pdb`` debugger::
 
     python -m pdb $(which reduceExposure.py) ... --doraise
 
-will run ``reduceExposure.py`` and put drop you into the debugger when it hits the exception
+will run ``reduceExposure.py`` and drop you into the debugger when it hits the exception
 (it does start you off in the debugger;
 tell it ``c`` to continue,
 and then it will run the program until it hits the exception).

@@ -100,7 +100,7 @@ and allows network communication between your machine and the container
 (you may have to do ``xhost +localhost`` on your machine to allow X windows from the container).
 You can choose a different image by specifying it on the command-line;
 e.g., the following runs an image that includes additional debugging facilities
-(i.e., `gdb`_, `valgrind`_, `igprof`_ and a library required by ds9):
+(i.e., `gdb`_, `valgrind`_, `igprof`_ and a library required by ds9)::
 
     pfsDocker paprice/pfs_pipe2d_debug:latest
 
@@ -425,6 +425,7 @@ The usage information is::
         -c <CORES> : number of cores to use (default: 1)
         -G : don't clone or update from git
         -n : don't cleanup temporary products
+        -C : don't create calibs
         <PREFIX> : directory under which to operate
 
 The main options you should care about are
@@ -434,6 +435,7 @@ The ``-b`` option is for developers testing new features.
 The ``-r`` and ``-d`` allow different runs of the integration test in the same directory.
 Don't use the ``-G`` option unless you know what you're doing.
 The ``-n`` option keeps some temporary products around, at the cost of more disk usage.
+The ``-C`` option skips the calib construction and runs only the science pipeline.
 
 We recommend running the integration test something like this::
 

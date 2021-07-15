@@ -51,6 +51,9 @@ This behaviour can be changed with the ``--mode`` command-line argument
 Run ``ingestPfsImages.py`` with the ``--help`` command-line argument
 for an extensive list of command-line arguments that are supported.
 
+If you are getting errors related to the images already having been ingested,
+you can add to your command-line: ``--config clobber=True register.ignore=True``.
+
 .. note:: ``ingestPfsImages.py`` will not work well with the ``-j`` argument (multiple processes)
           as it is designed to run with a single process.
 
