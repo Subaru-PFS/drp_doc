@@ -24,9 +24,9 @@ copyright = '2019, The PFS 2D Pipeline Team'
 author = 'The PFS 2D Pipeline Team'
 
 # The short X.Y version
-version = '5.0'
+version = 'July 2021'
 # The full version, including alpha/beta/rc tags
-release = '5.0'
+release = 'July 2021'
 
 
 # -- General configuration ---------------------------------------------------
