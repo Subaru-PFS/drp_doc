@@ -224,7 +224,7 @@ This is useful in combination with the ``pdb`` debugger::
 
     python -m pdb $(which reduceExposure.py) ... --doraise
 
-will run ``reduceExposure.py`` and put drop you into the debugger when it hits the exception
+will run ``reduceExposure.py`` and drop you into the debugger when it hits the exception
 (it does start you off in the debugger;
 tell it ``c`` to continue,
 and then it will run the program until it hits the exception).
@@ -399,9 +399,14 @@ The following keywords are currently supported:
 * ``dateObs`` (string): the date of observation (YYYY-MM-DD).
 * ``expTime`` (float): the exposure time (sec).
 * ``dataType`` (string): type of data (e.g., bias, dark, flat, science).
-* ``taiObs`` (string): the time of observation (HH:MM:SS.sss)
-* ``pfiDesignId`` (int): the top-end configuration design identifier
-* ``slitOffset`` (float): the applied x offset of the slit
+* ``taiObs`` (string): date+time of observation (YYY-MM-DDTHH:MM:SS.sss).
+* ``pfiDesignId`` (int): the top-end configuration design identifier.
+* ``dither`` (float): slit offset in spatial dimension.
+* ``shift`` (float): slit offset in spectral dimension.
+* ``focus`` (float): focus offset.
+* ``lamps`` (string): calibration lamps that are active.
+* ``attenuator`` (float): attenuator setting.
+* ``photodiode`` (float): photodiode reading.
 
 
 .. [#] We would like to get rid of ``visit``, but it is baked into the current

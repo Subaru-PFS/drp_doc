@@ -8,8 +8,16 @@ live in a "data repository".
 Ideally, from the point of view of the user,
 this "data repository" is a black box that contains the data:
 the user should never assume a particular implementation for the data repository
-(including directory structure and filenames),
+(including directory structure, filenames and file formats),
 but instead access it through the :ref:`butler`.
+
+.. note:: The butler that we currently use is based on the second generation ("Gen2") LSST middleware,
+          and all PFS 2D DRP operations are hard-wired to expect that.
+          LSST has been developing a new generation of middleware ("Gen3")
+          which we will adopt at a suitable time.
+          These two middleware generations have different designs,
+          and the data repositories they employ are not directly interchangeable,
+          but we expect that there will be a facility available to convert Gen2 data repositories to Gen3.
 
 Here, we create a data repository and stuff raw data into it,
 for use by the pipeline.
@@ -43,6 +51,9 @@ This behaviour can be changed with the ``--mode`` command-line argument
 Run ``ingestPfsImages.py`` with the ``--help`` command-line argument
 for an extensive list of command-line arguments that are supported.
 
+If you are getting errors related to the images already having been ingested,
+you can add to your command-line: ``--config clobber=True register.ignore=True``.
+
 .. note:: ``ingestPfsImages.py`` will not work well with the ``-j`` argument (multiple processes)
           as it is designed to run with a single process.
 
@@ -75,7 +86,3 @@ You can search the repository for keyword values using ``Butler.queryMetadata``:
     ... 
     {'visit': 32, 'spectrograph': 1, 'arm': 'r'} <lsst.afw.image.exposure.exposure.ExposureU object at 0x7f1fd22e4880>
     {'visit': 33, 'spectrograph': 1, 'arm': 'r'} <lsst.afw.image.exposure.exposure.ExposureU object at 0x7f1fd22e4dc0>
-
-.. note:: The data butler has several shortcomings,
-          but LSST is working on a redesigned version.
-
