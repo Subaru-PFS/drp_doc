@@ -4,7 +4,7 @@ Installation
 ============
 
 The PFS 2D DRP uses components from the `LSST Data Management stack`_.
-We currently use LSST stack version ``18.1.0``,
+We currently use LSST stack version ``23.0.0``,
 so installing the PFS 2D DRP requires also installing this version of the LSST stack.
 There are multiple ways of installing these.
 
@@ -197,17 +197,13 @@ Dependencies
 The LSST stack, on which the PFS software is built,
 requires the following Redhat/CentOS packages::
 
-    install bison blas bzip2 bzip2-devel cmake curl flex fontconfig
-    freetype-devel gawk gcc-c++ gcc-gfortran gettext git glib2-devel
-    java-1.8.0-openjdk libcurl-devel libuuid-devel libXext libXrender
-    libXt-devel make mesa-libGL ncurses-devel openssl-devel patch perl
-    perl-ExtUtils-MakeMaker readline-devel sed tar which zlib-dev
+    patch diffutils git
 
 If you're not running Redhat/CentOS,
 check the list of `prerequisites for the LSST stack`_
 and install the packages you need for your system.
 
-.. _prerequisites for the LSST stack: https://pipelines.lsst.io/v/v18_1_0/install/newinstall.html#prerequisites
+.. _prerequisites for the LSST stack: https://pipelines.lsst.io/v/v23_0_0/install/newinstall.html#prerequisites
 
 In addition to the above, |git-lfs|_ must be installed,
 which involves installing both the binaries (usually through your system's package manager)
@@ -329,7 +325,7 @@ Install LSST
 
 Follow the `LSST install instructions`_.
 Make sure you install the correct version of the LSST stack
-(currently, we use ``v18_1_0``).
+(currently, we use ``v23_0_0``).
 Instead of installing the ``lsst_distrib`` product,
 you can install just ``pipe_drivers`` for a faster install [#]_.
 Follow their instructions for configuring your environment,
