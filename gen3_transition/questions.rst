@@ -44,3 +44,25 @@ We have tried to make it so that other dataset types besides ``raw``
 (e.g., ``postISRCCD``, ``pfsArm``, etc.)
 do not suffer from this problem,
 but ``raw`` is defined by LSST and it's scary to contemplate changing it.
+
+
+Deleting collections
+~~~~~~~~~~~~~~~~~~~~
+
+``butler remove-collections`` will remove non-``RUN`` collections.
+This is generally used to un-chain your output collection
+from the timestamped ``RUN`` collections contained within.
+``butler remove-runs`` will remove ``RUN`` collections and the data they contain.
+``butlerCleanRun.py`` allows you to remove particular dataset types from ``RUN`` collections.
+Use these commands with the ``-h`` flag to get more information.
+
+To completely remove an output collection, you probably want to do something like::
+
+    butler remove-collections $DATASTORE price/pipe2d-12345
+    butler remove-runs $DATASTORE price/pipe2d-12345/*
+
+Notice that the first command removes the chain, and the second removes the runs (and the data).
+The order in which these commands are run shouldn't matter.
+
+.. warning:: Never use ``rm`` in the datastore unless it's just to remove (verified) empty directories.
+
