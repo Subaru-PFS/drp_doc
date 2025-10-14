@@ -27,6 +27,10 @@ appears to have greatly mitigated this problem.
 
 Below we outline our current strategy for measuring and applying
 the relative fiber throughputs.
+The final result is that after running the ``ReduceExposureTask`` on a quartz exposure,
+the ``pfsArm.flux`` spectra correspond to the extracted spectra from the image,
+and the ``pfsArm.norm`` spectra consist of the contents of the ``fiberNorms_calib``,
+with the black spot, screen illumination and PFI corrections (including the skyNorms common mode) applied.
 
 
 General strategy
@@ -42,10 +46,11 @@ it appears to be sufficient to make this measurement once per run.
 When processing a science exposure,
 the measured quartz spectra are propagated to the ``pfsArm.norm`` spectra.
 Corrections are applied to these to account for
-the black spot shadows and the screen illumination pattern.
+the :ref:`black spot shadows <blackSpots>`
+and the :ref:`screen illumination pattern <screenIllumination>`.
 
 The quartz exposures are taken with the fibers at the ``HOME`` position,
-and additional corrections are applied to account
+and :ref:`additional corrections <_pfiCorrections>` are applied to account
 for changes in the fiber throughput with position within the patrol region.
 
 
@@ -57,6 +62,10 @@ The first is through quartz exposures.
 These provide a high signal-to-noise measurement of the relative fiber throughputs
 as a function of fiber, spectrograph and wavelength.
 We call these "fiberNorms".
+(We might instead use exposures of the twilight sky,
+but these are less convenient to obtain and have lower signal-to-noise;
+we will apply :ref:`corrections <screenIllumination>` to the quartz exposures
+to make them look more like the sky.)
 
 The second is through the sky lines in science exposures.
 While these have lower signal-to-noise per exposure than the quartz exposures,
@@ -74,6 +83,16 @@ The fiberNorms are measured from the ``pfsArm`` spectra of quartz exposures:
 .. math::
 
     \tt{fiberNorms} = \tt{pfsArm.flux} / \tt{pfsArm.norm}
+
+When generating a calibration product [#]_,
+the :ref:`screen illumination correction <screenIllumination>` is applied
+but the :ref:`PFI corrections <pfiCorrections>` are not applied.
+When generating a product for tracking the stability of the system [#]_,
+all the corrections are applied.
+
+.. [#] The ``fiberNorms_calib`` product; see below.
+.. [#] The ``fiberNorms`` product; see below.
+
 
 Even if there are no changes to the system throughput,
 the fiberNorms values will deviate from a mean value of unity
@@ -123,12 +142,15 @@ This calculation is performed iteratively with sigma clipping
 (``iterations=3 rejection=3.0``)
 to remove outlier pixels.
 
-We believe the skyNorms are mostly achromatic:
+We currently believe the skyNorms are mostly achromatic [#]_ :
 plotting the skyNorms from the ``r`` arm against skyNorms from the ``b`` arm
 yields a straight line with a slope of unity
 and a standard deviation about the line of about 1%.
 A single skyNorm value per fiber is therefore calculated
 using data from multiple arms simultaneously.
+
+.. [#] We suspect the skyNorms may be chromatic in the presence of vignetting
+       by, e.g., dust spots, but this is yet to be demonstrated in the data.
 
 
 Data products
@@ -139,7 +161,7 @@ It is created by the ``fiberNorms.yaml`` pipeline,
 by combining multiple [#]_ ``pfsArm`` spectra of quartzes.
 This provides a high-quality quartz spectrum for use in calibration of science exposures.
 
-.. [#] Usually consecutive exposures, with the quartz lamp stable.
+.. [#] Usually consecutive exposures, assuming the quartz lamp is stable.
 
 Note that the values of the fiberNorms depend on
 the choice of ``fiberProfiles`` used in the spectral extraction.
@@ -150,8 +172,7 @@ and check that the hashes are consistent.
 
 ``fiberNorms`` is a product created by the ``observing.yaml`` pipeline
 for quartz exposures only.
-It contains the residual fiberNorms
-(i.e., the ratio of the new quartz to the reference quartz in the ``fiberNorms_calib``),
+It contains the ratio of the new quartz to the reference quartz in the ``fiberNorms_calib``,
 allowing for tracking of the stability of the system.
 
 ``skyNorms_calib`` product is the skyNorms calibration product,
@@ -173,6 +194,7 @@ The goal is that the ``pfsArm.flux/pfsArm.norm`` values will be
 corrected for relative throughput differences.
 
 
+.. _blackSpots:
 Black spots
 ~~~~~~~~~~~
 
@@ -200,6 +222,7 @@ The value of the correction for each fiber is written to the ``pfsArm.notes.blac
 with the ``blackSpotId`` and ``blackSpotDistance`` also recorded.
 
 
+.. _screenIllumination:
 Screen illumination
 ~~~~~~~~~~~~~~~~~~~
 
@@ -235,6 +258,7 @@ The ``ScreenResponseTask`` checks that the exposure is a quartz exposure
 before applying the correction.
 
 
+.. _pfiCorrections:
 PFI corrections
 ~~~~~~~~~~~~~~~
 
