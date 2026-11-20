@@ -351,10 +351,11 @@ models and errors are fractions.
 
       Whether each fiber has a usable model (not ``NO_MODEL`` or ``FIT_FAILED``).
 
-   .. py:attribute:: hash
-      :type: int
+   .. py:attribute:: modelId
+      :type: str
 
-      A hash of the model, recorded by the fine layers fitted against it.
+      A unique identifier of the model (``MODEL_ID``), recorded by the fine layers fitted against it
+      and in the header of each ``pfsArm`` it corrects (``PFS.THETAPHIMODEL.ID``).
 
 .. py:class:: pfs.datamodel.PfsThetaPhiFine
 
