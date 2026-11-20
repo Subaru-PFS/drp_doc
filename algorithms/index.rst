@@ -9,3 +9,4 @@ PFS 2D Pipeline Design
 
    introduction
    relativeFiberThroughputs
+   fiberThroughputPatrolRegion
